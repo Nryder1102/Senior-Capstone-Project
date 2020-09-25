@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sbsdescription SYSTEM "sbsdescription.dtd">
+<sbsdescription formatversion="2.1" asmuid="2478817612" cookerbuild="20117" content="full">
+	<graphs count="10">
+		<graph pkgurl="pkg://Wood10" label="Wood10">
+			<sbspresets/>
+			<guigroups/>
+			<outputs count="6">
+				<output uid="906997697" identifier="diffuse"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="diffuse" group="Material">
+						<channels>
+							<channel names="diffuse"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="906997699" identifier="normal"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="normal" group="Material">
+						<channels>
+							<channel names="normal"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="906997701" identifier="height"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="height" group="Material">
+						<channels>
+							<channel names="height"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="906997703" identifier="metal"
+					format="0" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="metal" group="Material">
+						<channels>
+							<channel names="metallic"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="906997721" identifier="roughness"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="roughness" group="Material">
+						<channels>
+							<channel names="roughness"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="906997723" identifier="ambient_occlusion"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="ambient_occlusion" group="Material">
+						<channels>
+							<channel names="ambientOcclusion"/>
+						</channels>
+					</outputgui>
+				</output>
+			</outputs>
+			<inputs count="4">
+				<input uid="1103947912" identifier="$outputsize"
+					type="8" default="8,8" alteroutputs="906997697,906997699,906997701,906997703,906997721,906997723" alternodes="0"/>
+				<input uid="381615834" identifier="$randomseed"
+					type="4" default="0" alteroutputs="906997697,906997699,906997701,906997721,906997723" alternodes="0"/>
+				<input uid="906571595" identifier="Hue"
+					type="0" default="0.5" alteroutputs="906997697" alternodes="0">
+					<inputgui widget="slider" label="Hue">
+						<guislider  min="0.48" max="0.52" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="906498597" identifier="Cracks"
+					type="0" default="0" alteroutputs="906997697,906997699,906997701" alternodes="0">
+					<inputgui widget="slider" label="Cracks">
+						<guislider  min="0" max="0.3" step="0.01"/>
+					</inputgui>
+				</input>
+			</inputs>
+		</graph>
+		<graph pkgurl="pkg://Wood1" label="Wood1">
+			<sbspresets/>
+			<guigroups/>
+			<outputs count="6">
+				<output uid="3892603220" identifier="diffuse"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="diffuse" group="Material">
+						<channels>
+							<channel names="diffuse"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="3892603222" identifier="normal"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="normal" group="Material">
+						<channels>
+							<channel names="normal"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="3892603216" identifier="height"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="height" group="Material">
+						<channels>
+							<channel names="height"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="3892603218" identifier="metal"
+					format="0" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="metal" group="Material">
+						<channels>
+							<channel names="metallic"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="3892603212" identifier="roughness"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="roughness" group="Material">
+						<channels>
+							<channel names="roughness"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="3892603214" identifier="ambient_occlusion"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="ambient_occlusion" group="Material">
+						<channels>
+							<channel names="ambientOcclusion"/>
+						</channels>
+					</outputgui>
+				</output>
+			</outputs>
+			<inputs count="4">
+				<input uid="2680630813" identifier="$outputsize"
+					type="8" default="8,8" alteroutputs="3892603212,3892603214,3892603216,3892603218,3892603220,3892603222" alternodes="0"/>
+				<input uid="3367319631" identifier="$randomseed"
+					type="4" default="0" alteroutputs="3892603212,3892603214,3892603216,3892603220,3892603222" alternodes="0"/>
+				<input uid="3892505054" identifier="Hue"
+					type="0" default="0.5" alteroutputs="3892603220" alternodes="0">
+					<inputgui widget="slider" label="Hue">
+						<guislider  min="0.48" max="0.52" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="3892565168" identifier="Cracks"
+					type="0" default="0" alteroutputs="3892603216,3892603220,3892603222" alternodes="0">
+					<inputgui widget="slider" label="Cracks">
+						<guislider  min="0" max="0.3" step="0.01"/>
+					</inputgui>
+				</input>
+			</inputs>
+		</graph>
+		<graph pkgurl="pkg://Wood2" label="Wood2">
+			<sbspresets/>
+			<guigroups/>
+			<outputs count="6">
+				<output uid="1896691950" identifier="diffuse"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="diffuse" group="Material">
+						<channels>
+							<channel names="diffuse"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="1896691948" identifier="normal"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="normal" group="Material">
+						<channels>
+							<channel names="normal"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="1896691946" identifier="height"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="height" group="Material">
+						<channels>
+							<channel names="height"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="1896691944" identifier="metal"
+					format="0" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="metal" group="Material">
+						<channels>
+							<channel names="metallic"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="1896691958" identifier="roughness"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="roughness" group="Material">
+						<channels>
+							<channel names="roughness"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="1896691956" identifier="ambient_occlusion"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="ambient_occlusion" group="Material">
+						<channels>
+							<channel names="ambientOcclusion"/>
+						</channels>
+					</outputgui>
+				</output>
+			</outputs>
+			<inputs count="4">
+				<input uid="114196391" identifier="$outputsize"
+					type="8" default="8,8" alteroutputs="1896691944,1896691946,1896691948,1896691950,1896691956,1896691958" alternodes="0"/>
+				<input uid="1371302389" identifier="$randomseed"
+					type="4" default="0" alteroutputs="1896691946,1896691948,1896691950,1896691956,1896691958" alternodes="0"/>
+				<input uid="1896593508" identifier="Hue"
+					type="0" default="0.5" alteroutputs="1896691950" alternodes="0">
+					<inputgui widget="slider" label="Hue">
+						<guislider  min="0.48" max="0.52" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="1896514826" identifier="Cracks"
+					type="0" default="0.5" alteroutputs="1896691946,1896691948,1896691950" alternodes="0">
+					<inputgui widget="slider" label="Cracks">
+						<guislider  min="0" max="0.3" step="0.01"/>
+					</inputgui>
+				</input>
+			</inputs>
+		</graph>
+		<graph pkgurl="pkg://Wood3" label="Wood3">
+			<sbspresets/>
+			<guigroups/>
+			<outputs count="6">
+				<output uid="101320824" identifier="diffuse"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="diffuse" group="Material">
+						<channels>
+							<channel names="diffuse"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="101320826" identifier="normal"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="normal" group="Material">
+						<channels>
+							<channel names="normal"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="101320828" identifier="height"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="height" group="Material">
+						<channels>
+							<channel names="height"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="101320830" identifier="metal"
+					format="0" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="metal" group="Material">
+						<channels>
+							<channel names="metallic"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="101320800" identifier="roughness"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="roughness" group="Material">
+						<channels>
+							<channel names="roughness"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="101320802" identifier="ambient_occlusion"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="ambient_occlusion" group="Material">
+						<channels>
+							<channel names="ambientOcclusion"/>
+						</channels>
+					</outputgui>
+				</output>
+			</outputs>
+			<inputs count="4">
+				<input uid="1909018417" identifier="$outputsize"
+					type="8" default="8,8" alteroutputs="101320800,101320802,101320824,101320826,101320828,101320830" alternodes="0"/>
+				<input uid="649812323" identifier="$randomseed"
+					type="4" default="0" alteroutputs="101320800,101320802,101320824,101320826,101320828" alternodes="0"/>
+				<input uid="101484786" identifier="Hue"
+					type="0" default="0.5" alteroutputs="101320824" alternodes="0">
+					<inputgui widget="slider" label="Hue">
+						<guislider  min="0.48" max="0.52" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="101561756" identifier="Cracks"
+					type="0" default="0" alteroutputs="101320824,101320826,101320828" alternodes="0">
+					<inputgui widget="slider" label="Cracks">
+						<guislider  min="0" max="0.3" step="0.01"/>
+					</inputgui>
+				</input>
+			</inputs>
+		</graph>
+		<graph pkgurl="pkg://Wood4" label="Wood4">
+			<sbspresets/>
+			<guigroups/>
+			<outputs count="6">
+				<output uid="2557386203" identifier="diffuse"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="diffuse" group="Material">
+						<channels>
+							<channel names="diffuse"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="2557386201" identifier="normal"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="normal" group="Material">
+						<channels>
+							<channel names="normal"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="2557386207" identifier="height"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="height" group="Material">
+						<channels>
+							<channel names="height"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="2557386205" identifier="metal"
+					format="0" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="metal" group="Material">
+						<channels>
+							<channel names="metallic"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="2557386179" identifier="roughness"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="roughness" group="Material">
+						<channels>
+							<channel names="roughness"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="2557386177" identifier="ambient_occlusion"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="ambient_occlusion" group="Material">
+						<channels>
+							<channel names="ambientOcclusion"/>
+						</channels>
+					</outputgui>
+				</output>
+			</outputs>
+			<inputs count="4">
+				<input uid="4021148306" identifier="$outputsize"
+					type="8" default="8,8" alteroutputs="2557386177,2557386179,2557386201,2557386203,2557386205,2557386207" alternodes="0"/>
+				<input uid="3101674688" identifier="$randomseed"
+					type="4" default="0" alteroutputs="2557386177,2557386179,2557386201,2557386203,2557386207" alternodes="0"/>
+				<input uid="2556960081" identifier="Hue"
+					type="0" default="0.5" alteroutputs="2557386203" alternodes="0">
+					<inputgui widget="slider" label="Hue">
+						<guislider  min="0.48" max="0.52" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="2557026367" identifier="Cracks"
+					type="0" default="0.08" alteroutputs="2557386201,2557386203,2557386207" alternodes="0">
+					<inputgui widget="slider" label="Cracks">
+						<guislider  min="0" max="0.3" step="0.01"/>
+					</inputgui>
+				</input>
+			</inputs>
+		</graph>
+		<graph pkgurl="pkg://Wood5" label="Wood5">
+			<sbspresets/>
+			<guigroups/>
+			<outputs count="6">
+				<output uid="4016680269" identifier="diffuse"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="diffuse" group="Material">
+						<channels>
+							<channel names="diffuse"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="4016680271" identifier="normal"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="normal" group="Material">
+						<channels>
+							<channel names="normal"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="4016680265" identifier="height"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="height" group="Material">
+						<channels>
+							<channel names="height"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="4016680267" identifier="metal"
+					format="0" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="metal" group="Material">
+						<channels>
+							<channel names="metallic"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="4016680277" identifier="roughness"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="roughness" group="Material">
+						<channels>
+							<channel names="roughness"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="4016680279" identifier="ambient_occlusion"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="ambient_occlusion" group="Material">
+						<channels>
+							<channel names="ambientOcclusion"/>
+						</channels>
+					</outputgui>
+				</output>
+			</outputs>
+			<inputs count="4">
+				<input uid="2561337860" identifier="$outputsize"
+					type="8" default="8,8" alteroutputs="4016680265,4016680267,4016680269,4016680271,4016680277,4016680279" alternodes="0"/>
+				<input uid="3487104086" identifier="$randomseed"
+					type="4" default="0" alteroutputs="4016680265,4016680269,4016680271,4016680277,4016680279" alternodes="0"/>
+				<input uid="4017040839" identifier="Hue"
+					type="0" default="0.5" alteroutputs="4016680269" alternodes="0">
+					<inputgui widget="slider" label="Hue">
+						<guislider  min="0.48" max="0.52" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="4016967849" identifier="Cracks"
+					type="0" default="0" alteroutputs="4016680265,4016680269,4016680271" alternodes="0">
+					<inputgui widget="slider" label="Cracks">
+						<guislider  min="0" max="0.3" step="0.01"/>
+					</inputgui>
+				</input>
+			</inputs>
+		</graph>
+		<graph pkgurl="pkg://Wood6" label="Wood6">
+			<sbspresets/>
+			<guigroups/>
+			<outputs count="6">
+				<output uid="1986067703" identifier="diffuse"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="diffuse" group="Material">
+						<channels>
+							<channel names="diffuse"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="1986067701" identifier="normal"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="normal" group="Material">
+						<channels>
+							<channel names="normal"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="1986067699" identifier="height"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="height" group="Material">
+						<channels>
+							<channel names="height"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="1986067697" identifier="metal"
+					format="0" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="metal" group="Material">
+						<channels>
+							<channel names="metallic"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="1986067695" identifier="roughness"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="roughness" group="Material">
+						<channels>
+							<channel names="roughness"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="1986067693" identifier="ambient_occlusion"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="ambient_occlusion" group="Material">
+						<channels>
+							<channel names="ambientOcclusion"/>
+						</channels>
+					</outputgui>
+				</output>
+			</outputs>
+			<inputs count="4">
+				<input uid="27507646" identifier="$outputsize"
+					type="8" default="8,8" alteroutputs="1986067693,1986067695,1986067697,1986067699,1986067701,1986067703" alternodes="0"/>
+				<input uid="1456582124" identifier="$randomseed"
+					type="4" default="0" alteroutputs="1986067693,1986067695,1986067699,1986067701,1986067703" alternodes="0"/>
+				<input uid="1986428029" identifier="Hue"
+					type="0" default="0.5" alteroutputs="1986067703" alternodes="0">
+					<inputgui widget="slider" label="Hue">
+						<guislider  min="0.48" max="0.52" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="1986478355" identifier="Cracks"
+					type="0" default="0" alteroutputs="1986067699,1986067701,1986067703" alternodes="0">
+					<inputgui widget="slider" label="Cracks">
+						<guislider  min="0" max="0.3" step="0.01"/>
+					</inputgui>
+				</input>
+			</inputs>
+		</graph>
+		<graph pkgurl="pkg://Wood7" label="Wood7">
+			<sbspresets/>
+			<guigroups/>
+			<outputs count="6">
+				<output uid="23579745" identifier="diffuse"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="diffuse" group="Material">
+						<channels>
+							<channel names="diffuse"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="23579747" identifier="normal"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="normal" group="Material">
+						<channels>
+							<channel names="normal"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="23579749" identifier="height"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="height" group="Material">
+						<channels>
+							<channel names="height"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="23579751" identifier="metal"
+					format="0" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="metal" group="Material">
+						<channels>
+							<channel names="metallic"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="23579769" identifier="roughness"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="roughness" group="Material">
+						<channels>
+							<channel names="roughness"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="23579771" identifier="ambient_occlusion"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="ambient_occlusion" group="Material">
+						<channels>
+							<channel names="ambientOcclusion"/>
+						</channels>
+					</outputgui>
+				</output>
+			</outputs>
+			<inputs count="4">
+				<input uid="1990495016" identifier="$outputsize"
+					type="8" default="8,8" alteroutputs="23579745,23579747,23579749,23579751,23579769,23579771" alternodes="0"/>
+				<input uid="567713146" identifier="$randomseed"
+					type="4" default="0" alteroutputs="23579745,23579747,23579749,23579769,23579771" alternodes="0"/>
+				<input uid="23153899" identifier="Hue"
+					type="0" default="0.5" alteroutputs="23579745" alternodes="0">
+					<inputgui widget="slider" label="Hue">
+						<guislider  min="0.48" max="0.52" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="23097733" identifier="Cracks"
+					type="0" default="0" alteroutputs="23579745,23579747,23579749" alternodes="0">
+					<inputgui widget="slider" label="Cracks">
+						<guislider  min="0" max="0.3" step="0.01"/>
+					</inputgui>
+				</input>
+			</inputs>
+		</graph>
+		<graph pkgurl="pkg://Wood8" label="Wood8">
+			<sbspresets/>
+			<guigroups/>
+			<outputs count="6">
+				<output uid="2446905840" identifier="diffuse"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="diffuse" group="Material">
+						<channels>
+							<channel names="diffuse"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="2446905842" identifier="normal"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="normal" group="Material">
+						<channels>
+							<channel names="normal"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="2446905844" identifier="height"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="height" group="Material">
+						<channels>
+							<channel names="height"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="2446905846" identifier="metal"
+					format="0" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="metal" group="Material">
+						<channels>
+							<channel names="metallic"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="2446905832" identifier="roughness"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="roughness" group="Material">
+						<channels>
+							<channel names="roughness"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="2446905834" identifier="ambient_occlusion"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="ambient_occlusion" group="Material">
+						<channels>
+							<channel names="ambientOcclusion"/>
+						</channels>
+					</outputgui>
+				</output>
+			</outputs>
+			<inputs count="4">
+				<input uid="3860567737" identifier="$outputsize"
+					type="8" default="8,8" alteroutputs="2446905832,2446905834,2446905840,2446905842,2446905844,2446905846" alternodes="0"/>
+				<input uid="2976481515" identifier="$randomseed"
+					type="4" default="0" alteroutputs="2446905832,2446905834,2446905840,2446905842,2446905844" alternodes="0"/>
+				<input uid="2447266170" identifier="Hue"
+					type="0" default="0.5" alteroutputs="2446905840" alternodes="0">
+					<inputgui widget="slider" label="Hue">
+						<guislider  min="0.48" max="0.52" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="2447338516" identifier="Cracks"
+					type="0" default="0" alteroutputs="2446905840,2446905842,2446905844" alternodes="0">
+					<inputgui widget="slider" label="Cracks">
+						<guislider  min="0" max="0.3" step="0.01"/>
+					</inputgui>
+				</input>
+			</inputs>
+		</graph>
+		<graph pkgurl="pkg://Wood9" label="Wood9">
+			<sbspresets/>
+			<guigroups/>
+			<outputs count="6">
+				<output uid="3873431910" identifier="diffuse"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="diffuse" group="Material">
+						<channels>
+							<channel names="diffuse"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="3873431908" identifier="normal"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="normal" group="Material">
+						<channels>
+							<channel names="normal"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="3873431906" identifier="height"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="height" group="Material">
+						<channels>
+							<channel names="height"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="3873431904" identifier="metal"
+					format="0" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="metal" group="Material">
+						<channels>
+							<channel names="metallic"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="3873431934" identifier="roughness"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="roughness" group="Material">
+						<channels>
+							<channel names="roughness"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="3873431932" identifier="ambient_occlusion"
+					format="28" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="ambient_occlusion" group="Material">
+						<channels>
+							<channel names="ambientOcclusion"/>
+						</channels>
+					</outputgui>
+				</output>
+			</outputs>
+			<inputs count="4">
+				<input uid="2434573871" identifier="$outputsize"
+					type="8" default="8,8" alteroutputs="3873431904,3873431906,3873431908,3873431910,3873431932,3873431934" alternodes="0"/>
+				<input uid="3329142909" identifier="$randomseed"
+					type="4" default="0" alteroutputs="3873431906,3873431908,3873431910,3873431932,3873431934" alternodes="0"/>
+				<input uid="3873006060" identifier="Hue"
+					type="0" default="0.5" alteroutputs="3873431910" alternodes="0">
+					<inputgui widget="slider" label="Hue">
+						<guislider  min="0.48" max="0.52" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="3872939138" identifier="Cracks"
+					type="0" default="0" alteroutputs="3873431906,3873431908,3873431910" alternodes="0">
+					<inputgui widget="slider" label="Cracks">
+						<guislider  min="0" max="0.3" step="0.01"/>
+					</inputgui>
+				</input>
+			</inputs>
+		</graph>
+	</graphs>
+</sbsdescription>
