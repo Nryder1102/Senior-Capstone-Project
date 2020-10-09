@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Blah.unity
+- path: Assets/Blah MKB.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
