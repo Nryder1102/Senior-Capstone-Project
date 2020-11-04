@@ -22,9 +22,9 @@ public class CharacterController : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;		
         }
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
-            float speedModifier = 1;
+    /*    float speedModifier = 1;
         if (Input.GetKey(KeyCode.RightShift)) {
             speedModifier = sprintSpeed;
         } else {
@@ -39,6 +39,7 @@ public class CharacterController : MonoBehaviour {
         if (Input.GetKeyDown("escape")) {
             // turn on the cursor
             Cursor.lockState = CursorLockMode.None;
-        }
+    */
+       // }
     }
 }
