@@ -39,9 +39,6 @@
      <Compile Include="Assets\Asset  Store\BrokenVector\UltimateDungeonPack\Scenes\Demo\FPControls\Scripts\CharacterController.cs" />
      <Compile Include="Assets\Asset  Store\BrokenVector\UltimateDungeonPack\Scenes\Demo\FPControls\Scripts\MouseCamLook.cs" />
      <Compile Include="Assets\Asset  Store\BrokenVector\UltimateDungeonPack\Scripts\LightImprove.cs" />
-     <Compile Include="Assets\Asset  Store\Warrior Pack Bundle 3 FREE\Code\IKHands.cs" />
-     <Compile Include="Assets\Asset  Store\Warrior Pack Bundle 3 FREE\Code\SmoothFollow.cs" />
-     <Compile Include="Assets\Asset  Store\Warrior Pack Bundle 3 FREE\Code\WarriorAnimationDemoFREE.cs" />
      <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
      <Compile Include="Assets\DungeonProject.cs" />
      <Compile Include="Assets\Oculus\AudioManager\Scenes\Scripts\TestScript.cs" />
@@ -234,7 +231,6 @@
      <None Include="Assets\Ludiq\Assemblies\Bolt.Flow.Editor.xml" />
      <None Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Materials\ToyCubeWithOutline.shader" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Printing.xml" />
-     <None Include="Assets\Asset  Store\Install Bolt\README.txt" />
      <None Include="Assets\Oculus\SampleFramework\Core\Locomotion\Materials\ColumnGlow.shader" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Management.Instrumentation.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Data.Services.Client.xml" />
@@ -317,7 +313,6 @@
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Windows.Presentation.xml" />
      <None Include="Assets\Asset  Store\_Barking_Dog\Readme_Please.txt" />
-     <None Include="Assets\Asset  Store\Install Bolt\LICENSES.txt" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Xml.xml" />
      <None Include="Assets\Oculus\SampleFramework\license.txt" />
     <Reference Include="UnityEngine">
