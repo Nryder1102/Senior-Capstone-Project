@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     public Button cconfirm;
     public static int classnum;
     public static int cconfirm2;
-    public SpriteState beastdisabled;
+/*
+    public Sprite beastdisabled;
     public Sprite fighterdisabled;
     public Sprite rangerdisabled;
     public Sprite paladindisabled;
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
     public Sprite paladindetails;
     public Sprite magedetails;
     public Sprite roguedetails;
-
+*/
     
     
     // Start is called before the first frame update
@@ -142,6 +143,7 @@ public class GameManager : MonoBehaviour
             cconfirm2 = 2;
             
         }
+        cconfirm.interactable = false;
 
     }
 
