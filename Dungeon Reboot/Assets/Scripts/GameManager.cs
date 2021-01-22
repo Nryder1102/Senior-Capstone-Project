@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public Button cconfirm;
     public static int classnum;
     public static int cconfirm2;
+    public GameObject classSelectUI;
+    public GameObject barsUI;
 /*
     public Sprite beastdisabled;
     public Sprite fighterdisabled;
@@ -35,6 +37,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         cconfirm.interactable = false;
+        classSelectUI.SetActive(false);
+        barsUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,6 +48,15 @@ public class GameManager : MonoBehaviour
         {
             Application.Quit();
         }
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            classSelectUI.SetActive(true);
+        }
+    }
+
+    public void ClassStart()
+    {
+        classSelectUI.SetActive(true);
     }
 
     public void ClassSelect1()
@@ -147,7 +160,8 @@ public class GameManager : MonoBehaviour
             
         }
         cconfirm.interactable = false;
-
+        classSelectUI.SetActive(false);
+        barsUI.SetActive(true);
     }
 
 }
