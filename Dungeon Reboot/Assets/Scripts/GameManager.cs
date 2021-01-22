@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public static int cconfirm2;
     public GameObject classSelectUI;
     public GameObject barsUI;
+    
 /*
     public Sprite beastdisabled;
     public Sprite fighterdisabled;

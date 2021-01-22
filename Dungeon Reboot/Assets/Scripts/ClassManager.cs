@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClassManager : MonoBehaviour
 {
@@ -30,6 +31,13 @@ public class ClassManager : MonoBehaviour
     int mana;
     int exp; 
 
+    public Text healthBar;
+    public Text manaBar;
+    public Text expBar;
+    public Slider HealthBarVal;
+    public Slider ManaBarVal;
+    public Slider ExpBarVal;
+
 
 
     // Start is called before the first frame update
@@ -45,6 +53,8 @@ public class ClassManager : MonoBehaviour
         {
             Stats();
         }
+
+        SetBarValue();
     }
 
     
@@ -128,6 +138,25 @@ public class ClassManager : MonoBehaviour
             cha = cha + 2;
             GameManager.cconfirm2 = 3;
         }
+    }
+
+    public void healthTest()
+    {
+        health = health - 5;
+    }
+    
+
+    public void SetBarValue()
+    {
+        HealthBarVal.maxValue = healthMax;
+        HealthBarVal.value = health;
+        ManaBarVal.maxValue = manaMax;
+        ManaBarVal.value = mana;
+        ExpBarVal.maxValue = expMax;
+        ExpBarVal.value = exp;
+        healthBar.text = health + "/" + healthMax;
+        manaBar.text = mana + "/" + manaMax;
+        expBar.text = exp + "/" + expMax;
     }
 }
 
