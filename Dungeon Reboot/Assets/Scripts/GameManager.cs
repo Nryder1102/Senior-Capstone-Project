@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public Button fighterbttn;
     public Button beastbttn;
     public Button cconfirm;
-    public static int classnum;
+    public static int classnum = 0;
     public static int cconfirm2 = 0;
     public GameObject classSelectUI;
     public GameObject barsUI;
@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public static float waitVal;
     public static int waitFlag;
     public int menuState = 0;
+    public GameObject list;
 
 /*
     public Sprite beastdisabled;
@@ -55,8 +56,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-
-
         if(Input.GetKeyDown(KeyCode.Return))
         {
             classSelectUI.SetActive(true);
@@ -72,9 +71,15 @@ public class GameManager : MonoBehaviour
             cconfirm.interactable = true;
         }
 
-
-        MenuStateToggle();
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            bool isActive = menuUI.activeSelf;
+            menuUI.SetActive(!isActive);
+            statusUI.SetActive(false);
+            list.SetActive(true);
+        }
     }
+
 
     //Controls what buttons choose which class
     public void ClassStart()
@@ -139,7 +144,7 @@ public class GameManager : MonoBehaviour
     {
         BttnDisable();
         cconfirm.interactable = false;
-        waitVal = 5;
+        waitVal = 2;
         StartCoroutine(WaitRoutine());
   
     }
@@ -213,19 +218,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //Opens Menu
-    public void OpenMenu()
-    {
-        statusUI.SetActive(true);
-        menuState = 1;
-    }
-
-    public void CloseMenu()
-    {
-        statusUI.SetActive(false);
-        menuState = 0;
-    }
-
     //Wait function, for variable waitVal
     IEnumerator WaitRoutine()
     {
@@ -233,18 +225,9 @@ public class GameManager : MonoBehaviour
         waitFlag = 1;
     }
 
-    public void MenuStateToggle()
-{
-
-    if(Input.GetKeyDown(KeyCode.Escape) && menuState == 0)
-        {
-            OpenMenu();
-        }
-    if(Input.GetKeyDown(KeyCode.Escape) && menuState == 1)
-        {
-            //CloseMenu();
-        }
-
-}
-
+    public void OpenStats()
+    {
+        list.SetActive(false);
+        statusUI.SetActive(true);
+    }
 }
