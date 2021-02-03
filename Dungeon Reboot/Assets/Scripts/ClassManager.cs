@@ -13,6 +13,7 @@ public class ClassManager : MonoBehaviour
     //Stats
     //1 Assignable Point per Level
     public int level = 1;
+    private int levelMax = 0;
     //Dodge Chance + 5%/1 point(?) (From 5% base)
     public int dex = 1;
     //Attack Strength + 1/Point (Adds on to weapon attack)
@@ -30,14 +31,20 @@ public class ClassManager : MonoBehaviour
     int health;
     int mana;
     int exp; 
-
-    public Text healthBar;
-    public Text manaBar;
-    public Text expBar;
-    public Slider HealthBarVal;
-    public Slider ManaBarVal;
-    public Slider ExpBarVal;
-
+    public Text healthBarVal;
+    public Text manaBarVal;
+    public Text expBarVal;
+    public Slider HealthBar;
+    public Slider ManaBar;
+    public Slider ExpBar;
+    public Button healthTestButton;
+    public Text strVal;
+    public Text vitVal;
+    public Text intelVal;
+    public Text dexVal;
+    public Text chaVal;
+    public Text lukVal;
+ 
 
 
     // Start is called before the first frame update
@@ -55,6 +62,8 @@ public class ClassManager : MonoBehaviour
         }
 
         SetBarValue();
+        levelUp();
+        StatManager();
     }
 
     
@@ -143,20 +152,63 @@ public class ClassManager : MonoBehaviour
     public void healthTest()
     {
         health = health - 5;
+        if (health == 0)
+        {
+            healthTestButton.interactable = false;
+
+        }
+
+    }
+
+    public void expTest()
+    {
+        if(level != 20)
+        {
+        exp += 100;
+        }
     }
     
 
     public void SetBarValue()
     {
-        HealthBarVal.maxValue = healthMax;
-        HealthBarVal.value = health;
-        ManaBarVal.maxValue = manaMax;
-        ManaBarVal.value = mana;
-        ExpBarVal.maxValue = expMax;
-        ExpBarVal.value = exp;
-        healthBar.text = health + "/" + healthMax;
-        manaBar.text = mana + "/" + manaMax;
-        expBar.text = exp + "/" + expMax;
+        HealthBar.maxValue = healthMax;
+        HealthBar.value = health;
+        ManaBar.maxValue = manaMax;
+        ManaBar.value = mana;
+        ExpBar.maxValue = expMax;
+        ExpBar.value = exp;
+        healthBarVal.text = health + "/" + healthMax;
+        manaBarVal.text = mana + "/" + manaMax;
+        expBarVal.text = exp + "/" + expMax;
+    }
+
+    public void levelUp()
+    {
+        if (exp >= expMax && level != 20)
+        {
+            exp = exp - expMax;
+            expMax += 25;
+            level += 1;
+
+
+        }
+
+        if (exp >= expMax && level == 20 && levelMax == 0)
+        {
+            exp = expMax;
+            expBarVal.text = "Max Level";
+            levelMax = 1;
+        }
+    }
+
+    public  void StatManager()
+    {
+        strVal.text = "" + str;
+        vitVal.text = "" + vit;
+        intelVal.text = "" + intel;
+        dexVal.text = "" + dex;
+        chaVal.text = "" + cha;
+        lukVal.text = "" + luk;
     }
 }
 
