@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class PartyManager : MonoBehaviour
 {
+
+    public static int attrp1 = 3;
+    public static int attrp1Flag = 3;
     // Start is called before the first frame update
     void Start()
     {

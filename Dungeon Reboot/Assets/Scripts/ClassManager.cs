@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class ClassManager : MonoBehaviour
 {
     //Variables
-    public int healthMax;
-    public int healthMaxFlag;
-    public int manaMax;
-    public int manaMaxFlag;
+    public static int healthMax;
+    public static int healthMaxFlag;
+    public static int manaMax;
+    public static int manaMaxFlag;
     public int expMax = 50;
     public Text statClass;
 
@@ -18,20 +18,20 @@ public class ClassManager : MonoBehaviour
     public int level = 1;
     private int levelMax = 0;
     //Dodge Chance + 5%/1 point(?) (From 5% base)
-    public int dex = 0;
+    public static int dex = 0;
     //Attack Strength/(Maybe Defense too?) + 1/Point (Adds on to weapon attack)
-    public int str = 0;
+    public static int str = 0;
     //Health + 5/1 point(?) (Adds on to class base)
-    public int vit = 0;
+    public static int vit = 0;
     //Mana + 5/1 point(?) (Adds on to clase base)
-    public int intel = 0;
+    public static int intel = 0;
     //Makes negotiations more successfull + 5%/Point (From 5% base)
-    public int cha = 0;
+    public static int cha = 0;
     //Increases Drop Chance, as well as give a 5% boost to Dodge and Negotiations per point (From 5% base)
-    public int luk = 0;
-    public int attr = 0;
-    public int attrConfirm = 0;
-    public int attrFlag;
+    public static int luk = 0;
+    public static int attr = 4;
+    public static int attrConfirm = 0;
+    public static int attrFlag = 4;
     public Text attributePoints;
     public Button strplus;
     public Button strmin;
@@ -45,14 +45,15 @@ public class ClassManager : MonoBehaviour
     public Button chamin;
     public Button lukplus;
     public Button lukmin;
-    public int strFlag;
-    public int vitFlag;
-    public int dexFlag;
-    public int intFlag;
-    public int chaFlag;
-    public int lukFlag;
+    public static int strFlag;
+    public static int vitFlag;
+    public static int dexFlag;
+    public static int intFlag;
+    public static int chaFlag;
+    public static int lukFlag;
     public Text levelNum;
     public Text levelNumDD;
+    public Button checkConfirm;
 
 
     //Bars
@@ -66,6 +67,7 @@ public class ClassManager : MonoBehaviour
     public Slider ManaBar;
     public Slider ExpBar;
     public Button healthTestButton;
+    public Button expTestButton;
     public Text strVal;
     public Text vitVal;
     public Text intelVal;
@@ -98,6 +100,15 @@ public class ClassManager : MonoBehaviour
         intmin.interactable = false;
         chamin.interactable = false;
         lukmin.interactable = false;
+        checkConfirm.interactable = false;
+        if(GameManager.classnum == 0)
+        {
+            healthTestButton.interactable = false;
+        }
+        if(GameManager.classnum == 0)
+        {
+            expTestButton.interactable = false;
+        }
     }
 
     // Update is called once per frame
@@ -111,6 +122,52 @@ public class ClassManager : MonoBehaviour
         SetBarValue();
         levelUp();
         StatManager();
+
+        if(attrConfirm == 1)
+        {
+            checkConfirm.interactable = true;
+        }
+        if(attr == attrFlag || attrConfirm == 0)
+        {
+            checkConfirm.interactable = false;
+        }
+
+        if(attrConfirm == 1 && Input.GetKeyDown(KeyCode.Escape))
+        {
+            str = strFlag;
+            vit = vitFlag;
+            dex = dexFlag;
+            intel = intFlag;
+            cha = chaFlag;
+            luk = lukFlag;
+            healthMax = healthMaxFlag;
+            manaMax = manaMaxFlag;
+            attr = attrFlag;
+            attrConfirm = 0;
+            strmin.interactable = false;
+            vitmin.interactable = false;
+            dexmin.interactable = false;
+            intmin.interactable = false;
+            chamin.interactable = false;
+            lukmin.interactable = false;
+        }
+
+        if(GameManager.classnum != 0 && GameManager.cconfirm2 == 3)
+        {
+            expTestButton.interactable = true;
+            healthTestButton.interactable = true;
+        }
+
+        if(attrConfirm == 0)
+        {
+            strmin.interactable = false;
+            vitmin.interactable = false;
+            dexmin.interactable = false;
+            intmin.interactable = false;
+            chamin.interactable = false;
+            lukmin.interactable = false;
+        }
+
     }
 
     
@@ -125,8 +182,10 @@ public class ClassManager : MonoBehaviour
             mana = 30;
             expMax = 50;
             exp = 0;
-            dex = dex + 2;
-            luk = luk + 2;
+            healthMaxFlag = healthMax;
+            manaMaxFlag = manaMax;
+//            dex = dex + 2;
+//            luk = luk + 2;
             GameManager.cconfirm2 = 3;
             statClass.text = "Rogue";
         }
@@ -139,25 +198,30 @@ public class ClassManager : MonoBehaviour
             mana = 75;
             expMax = 50;
             exp = 0;
-            intel = intel + 2;
-            luk = luk + 2;
+            healthMaxFlag = healthMax;
+            manaMaxFlag = manaMax;
+//            intel = intel + 2;
+//            luk = luk + 2;
+//            manaMax += intel*5;
             GameManager.cconfirm2 = 3;
             statClass.text = "Mage";
         }
 
         if(GameManager.classnum == 3)
         {
-            healthMax = 115;
-            health = 115;
+            healthMax = 125;
+            health = 125;
             manaMax = 30;
             mana = 30;
             expMax = 50;
             exp = 0;
-            vit = vit + 2;
-            cha = cha + 2;
-            healthMax += vit*5;
+            healthMaxFlag = healthMax;
+            manaMaxFlag = manaMax;
+//            vit = vit + 2;
+//            cha = cha + 2;
+//            healthMax += vit*5;
             GameManager.cconfirm2 = 3;
-            statClass.name = "Paladin";
+            statClass.text = "Paladin";
         }
 
         if(GameManager.classnum == 4)
@@ -168,37 +232,43 @@ public class ClassManager : MonoBehaviour
             mana = 40;
             expMax = 50;
             exp = 0;
-            dex = dex + 2;
-            cha = cha + 2;
+            healthMaxFlag = healthMax;
+            manaMaxFlag = manaMax;
+//            dex = dex + 2;
+//            cha = cha + 2;
             GameManager.cconfirm2 = 3;
             statClass.text = "Ranger";
         }
 
         if(GameManager.classnum == 5)
         {
-            healthMax = 100;
-            health = 100;
+            healthMax = 110;
+            health = 110;
             manaMax = 30;
             mana = 30;
             expMax = 50;
             exp = 0;
-            vit = vit + 2;
-            str = str + 2;
-            healthMax += vit*5;
+            healthMaxFlag = healthMax;
+            manaMaxFlag = manaMax;
+//            vit = vit + 2;
+//            str = str + 2;
+//            healthMax += vit*5;
             GameManager.cconfirm2 = 3;
             statClass.text = "Warrior";
         }
 
         if(GameManager.classnum == 6)
         {
-            healthMax = 110;
-            health = 110;
+            healthMax = 100;
+            health = 100;
             manaMax = 50;
             mana = 50;
             expMax = 50;
             exp = 0;
-            str = str + 2;
-            cha = cha + 2;
+            healthMaxFlag = healthMax;
+            manaMaxFlag = manaMax;
+//            str = str + 2;
+//            cha = cha + 2;
             GameManager.cconfirm2 = 3;
             statClass.text = "Beast";
         }
@@ -217,6 +287,14 @@ public class ClassManager : MonoBehaviour
 
     public void expTest()
     {
+        if(level == 20)
+        {
+            expTestButton.interactable = false;
+        }
+        if(GameManager.classnum != 0)
+        {
+            expTestButton.interactable = true;
+        }
         if(level != 20)
         {
         exp += 100;
@@ -257,6 +335,8 @@ public class ClassManager : MonoBehaviour
             lukFlag = luk;
             healthMaxFlag = healthMax;
             manaMaxFlag = manaMax;
+            health = healthMax;
+            mana = manaMax;
             if(level <= 9)
             {
                 levelNum.text = "Level: " + level;
@@ -278,6 +358,10 @@ public class ClassManager : MonoBehaviour
 
     public void StatManager()
     {
+        //Should hopefully be able to switch stat pages using something like this
+        //Character Slot 1
+        if(GameManager.selectedChar == 0 || GameManager.selectedChar == 1)
+        {
         strVal.text = "" + str;
         vitVal.text = "" + vit;
         intelVal.text = "" + intel;
@@ -286,8 +370,10 @@ public class ClassManager : MonoBehaviour
         lukVal.text = "" + luk;
         atk = ItemManager.wpnatk + str;
         def = ItemManager.armdef + str/2;
-
-        
+        attack.text = "" + atk;
+        defense.text = "" + def;
+        statHealth.text = health + "/" + healthMax;
+        statMana.text = mana + "/" + manaMax;   
         if(attr >= 1)
         {
             strplus.interactable = true;
@@ -326,11 +412,80 @@ public class ClassManager : MonoBehaviour
         {
             lukplus.interactable = false;
         }
+        if(GameManager.classnum == 1)
+        {
+            statClass.text = "Rogue";
+        }
+        if(GameManager.classnum == 2)
+        {
+            statClass.text = "Mage";
+        }
+        if(GameManager.classnum == 3)
+        {
+            statClass.text = "Paladin";
+        }
+        if(GameManager.classnum == 4)
+        {
+            statClass.text = "Ranger";
+        }
+        if(GameManager.classnum == 5)
+        {
+            statClass.text = "Warrior";
+        }
+        if(GameManager.classnum == 6)
+        {
+            statClass.text = "Beast";
+        }
+        }
 
-        attack.text = "" + atk;
-        defense.text = "" + def;
-        statHealth.text = health + "/" + healthMax;
-        statMana.text = mana + "/" + manaMax;
+
+
+        //Character Slot 2
+        if(GameManager.selectedChar == 2)
+        {
+        statClass.text = "test";
+        if(PartyManager.attrp1 >= 1)
+        {
+            strplus.interactable = true;
+            vitplus.interactable = true;
+            dexplus.interactable = true;
+            intplus.interactable = true;
+            chaplus.interactable = true;
+            lukplus.interactable = true;
+            attributePoints.text = "" + PartyManager.attrp1;
+        }
+        if(PartyManager.attrp1 == 0)
+        {
+            attributePoints.text = "" + PartyManager.attrp1;
+        }
+        if(str == 20)
+        {
+            strplus.interactable = false;
+        }
+        if(vit == 20)
+        {
+            vitplus.interactable = false;
+        }
+        if(dex == 20)
+        {
+            dexplus.interactable = false;
+        }
+        if(intel == 20)
+        {
+            intplus.interactable = false;
+        }
+        if(cha == 20)
+        {
+            chaplus.interactable = false;
+        }
+        if(luk == 20)
+        {
+            lukplus.interactable = false;
+        }
+        }
+
+
+
     }
 
 
@@ -377,7 +532,7 @@ public class ClassManager : MonoBehaviour
         {
         vit += 1;
         attr -= 1;
-        healthMax += vit*5;
+        healthMax += 5;
         }
         attrConfirm = 1;
         if(attr == 0)
@@ -395,7 +550,7 @@ public class ClassManager : MonoBehaviour
     {
         if(attr >= 0 && attrConfirm == 1)
         {
-            healthMax -= vit*5;
+            healthMax -= 5;
             vit -= 1;
             attr += 1;
             strplus.interactable = true;
@@ -453,6 +608,7 @@ public class ClassManager : MonoBehaviour
         {
         intel += 1;
         attr -= 1;
+        manaMax += 5;
         }
         attrConfirm = 1;
         if(attr == 0)
@@ -470,6 +626,7 @@ public class ClassManager : MonoBehaviour
     {
         if(attr >= 0 && attrConfirm == 1)
         {
+            manaMax -= 5;
             intel -= 1;
             attr += 1;
             strplus.interactable = true;

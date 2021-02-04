@@ -23,7 +23,19 @@ public class ItemManager : MonoBehaviour
         
     }
 
+    public void EquippedWeapons()
+    {
 
+    }
+
+    public void EquippedArmor()
+    {
+        
+    }
+    public void BrokenSword()
+    {
+        wpnatk = 2;
+    }
     public void TrainingSword()
     {
         wpnatk = 5;

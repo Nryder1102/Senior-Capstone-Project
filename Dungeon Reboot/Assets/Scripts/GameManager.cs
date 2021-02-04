@@ -24,21 +24,8 @@ public class GameManager : MonoBehaviour
     public static int waitFlag;
     public int menuState = 0;
     public GameObject list;
-
-/*
-    public Sprite beastdisabled;
-    public Sprite fighterdisabled;
-    public Sprite rangerdisabled;
-    public Sprite paladindisabled;
-    public Sprite magedisabled;
-    public Sprite roguedisabled;
-    public Sprite beastdetails;
-    public Sprite fighterdetails;
-    public Sprite rangerdetails;
-    public Sprite paladindetails;
-    public Sprite magedetails;
-    public Sprite roguedetails;
-*/
+    public GameObject confirmQuit;
+    public static int selectedChar = 0;
     
     
     // Start is called before the first frame update
@@ -56,7 +43,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.Return) && classnum == 0)
         {
             classSelectUI.SetActive(true);
         }
@@ -71,11 +58,12 @@ public class GameManager : MonoBehaviour
             cconfirm.interactable = true;
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && classnum != 0)
         {
             bool isActive = menuUI.activeSelf;
             menuUI.SetActive(!isActive);
             statusUI.SetActive(false);
+            confirmQuit.SetActive(false);
             list.SetActive(true);
         }
     }
@@ -230,4 +218,68 @@ public class GameManager : MonoBehaviour
         list.SetActive(false);
         statusUI.SetActive(true);
     }
+
+    public void QuitConfirmation()
+    {
+        confirmQuit.SetActive(true);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    public void QuitStop()
+    {
+        confirmQuit.SetActive(false);
+    }
+
+    public void StatsBack()
+    {
+            statusUI.SetActive(false);
+            list.SetActive(true);
+            ClassManager.str = ClassManager.strFlag;
+            ClassManager.vit = ClassManager.vitFlag;
+            ClassManager.dex = ClassManager.dexFlag;
+            ClassManager.intel = ClassManager.intFlag;
+            ClassManager.cha = ClassManager.chaFlag;
+            ClassManager.luk = ClassManager.lukFlag;
+            ClassManager.healthMax = ClassManager.healthMaxFlag;
+            ClassManager.manaMax = ClassManager.manaMaxFlag;
+            ClassManager.attr = ClassManager.attrFlag;
+            ClassManager.attrConfirm = 0;
+    }
+
+//Changes which character slot is selected on the party menu
+    public void CharSelect1()
+    {
+        selectedChar = 1;
+        ClassManager.str = ClassManager.strFlag;
+        ClassManager.vit = ClassManager.vitFlag;
+        ClassManager.dex = ClassManager.dexFlag;
+        ClassManager.intel = ClassManager.intFlag;
+        ClassManager.cha = ClassManager.chaFlag;
+        ClassManager.luk = ClassManager.lukFlag;
+        ClassManager.healthMax = ClassManager.healthMaxFlag;
+        ClassManager.manaMax = ClassManager.manaMaxFlag;
+        ClassManager.attr = ClassManager.attrFlag;
+        ClassManager.healthMax = ClassManager.healthMaxFlag;
+        ClassManager.manaMax = ClassManager.manaMaxFlag;
+        ClassManager.attrConfirm = 0;
+        
+    }
+    public void CharSelect2()
+    {
+        selectedChar = 2;
+        PartyManager.attrp1 = PartyManager.attrp1Flag;
+        ClassManager.attrConfirm = 0;
+
+    }
+    public void CharSelect3()
+    {
+        selectedChar = 3;
+        Debug.Log(selectedChar);
+    }
+
+
+
+
 }
