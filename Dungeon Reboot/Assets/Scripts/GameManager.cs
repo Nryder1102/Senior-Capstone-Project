@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
     public GameObject list;
     public GameObject confirmQuit;
     public static int selectedChar = 0;
+    public static string statPlayerName = "Name";
+    public InputField playerName;
+    public GameObject playerNameEntry;
+    public static int playerRace;
+    public static string playerRaceName;
+    public GameObject playerRaceSelect;
     
     
     // Start is called before the first frame update
@@ -37,16 +43,14 @@ public class GameManager : MonoBehaviour
         skillUI.SetActive(false);
         statusUI.SetActive(false);
         menuUI.SetActive(false);
+        playerNameEntry.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if(Input.GetKeyDown(KeyCode.Return) && classnum == 0)
-        {
-            classSelectUI.SetActive(true);
-        }
+        
         if (waitFlag == 1)
         {
             classSelectUI.SetActive(false);
@@ -62,9 +66,8 @@ public class GameManager : MonoBehaviour
         {
             bool isActive = menuUI.activeSelf;
             menuUI.SetActive(!isActive);
-            statusUI.SetActive(false);
             confirmQuit.SetActive(false);
-            list.SetActive(true);
+            StatsBack();
         }
     }
 
@@ -246,8 +249,63 @@ public class GameManager : MonoBehaviour
             ClassManager.manaMax = ClassManager.manaMaxFlag;
             ClassManager.attr = ClassManager.attrFlag;
             ClassManager.attrConfirm = 0;
+            PartyManager.strp1 = PartyManager.strp1Flag;
+            PartyManager.vitp1 = PartyManager.vitp1Flag;
+            PartyManager.dexp1 = PartyManager.dexp1Flag;
+            PartyManager.intelp1 = PartyManager.intp1Flag;
+            PartyManager.chap1 = PartyManager.chap1Flag;
+            PartyManager.lukp1 = PartyManager.lukp1Flag;
+            PartyManager.healthMaxp1 = PartyManager.healthMaxp1Flag;
+            PartyManager.manaMaxp1 = PartyManager.manaMaxp1Flag;
+            PartyManager.attrp1 = PartyManager.attrp1Flag;
+            PartyManager.strp2 = PartyManager.strp2Flag;
+            PartyManager.vitp2 = PartyManager.vitp2Flag;
+            PartyManager.dexp2 = PartyManager.dexp2Flag;
+            PartyManager.intelp2 = PartyManager.intp2Flag;
+            PartyManager.chap2 = PartyManager.chap2Flag;
+            PartyManager.lukp2 = PartyManager.lukp2Flag;
+            PartyManager.healthMaxp2 = PartyManager.healthMaxp2Flag;
+            PartyManager.manaMaxp2 = PartyManager.manaMaxp2Flag;
+            PartyManager.attrp2 = PartyManager.attrp2Flag;
+            selectedChar = 1;
     }
 
+    public void SaveName()
+    {
+        statPlayerName = playerName.text.ToString();
+        playerNameEntry.SetActive(false);
+        //playerRaceSelect.SetActive(true);
+        classSelectUI.SetActive(true);
+    }
+
+    public void SelectRace1()
+    {
+
+    }
+    public void SelectRace2()
+    {
+        
+    }
+    public void SelectRace3()
+    {
+        
+    }
+    public void SelectRace4()
+    {
+        
+    }
+    public void SelectRace5()
+    {
+        
+    }
+    public void SelectRace6()
+    {
+        
+    }
+    public void SaveRace()
+    {
+        
+    }
 //Changes which character slot is selected on the party menu
     public void CharSelect1()
     {
@@ -261,14 +319,20 @@ public class GameManager : MonoBehaviour
         ClassManager.healthMax = ClassManager.healthMaxFlag;
         ClassManager.manaMax = ClassManager.manaMaxFlag;
         ClassManager.attr = ClassManager.attrFlag;
-        ClassManager.healthMax = ClassManager.healthMaxFlag;
-        ClassManager.manaMax = ClassManager.manaMaxFlag;
         ClassManager.attrConfirm = 0;
         
     }
     public void CharSelect2()
     {
         selectedChar = 2;
+        PartyManager.strp1 = PartyManager.strp1Flag;
+        PartyManager.vitp1 = PartyManager.vitp1Flag;
+        PartyManager.dexp1 = PartyManager.dexp1Flag;
+        PartyManager.intelp1 = PartyManager.intp1Flag;
+        PartyManager.chap1 = PartyManager.chap1Flag;
+        PartyManager.lukp1 = PartyManager.lukp1Flag;
+        PartyManager.healthMaxp1 = PartyManager.healthMaxp1Flag;
+        PartyManager.manaMaxp1 = PartyManager.manaMaxp1Flag;
         PartyManager.attrp1 = PartyManager.attrp1Flag;
         ClassManager.attrConfirm = 0;
 
@@ -276,7 +340,16 @@ public class GameManager : MonoBehaviour
     public void CharSelect3()
     {
         selectedChar = 3;
-        Debug.Log(selectedChar);
+        PartyManager.strp2 = PartyManager.strp2Flag;
+        PartyManager.vitp2 = PartyManager.vitp2Flag;
+        PartyManager.dexp2 = PartyManager.dexp2Flag;
+        PartyManager.intelp2 = PartyManager.intp2Flag;
+        PartyManager.chap2 = PartyManager.chap2Flag;
+        PartyManager.lukp2 = PartyManager.lukp2Flag;
+        PartyManager.healthMaxp2 = PartyManager.healthMaxp2Flag;
+        PartyManager.manaMaxp2 = PartyManager.manaMaxp2Flag;
+        PartyManager.attrp2 = PartyManager.attrp2Flag;
+        ClassManager.attrConfirm = 0;
     }
 
 

@@ -1,0 +1,19 @@
+How party member stats should work:
+
+Three stat values for each character slot
+Each slot's values will be set to equal the selected values depending on which character fills that slot
+
+Basically, if party member 2 = (character)
+statsp1 = (character's stats)
+
+This is going to be really annoying
+Like, REALLY annoying, as I have to repeat each character's stats per slot
+This is going to be SO many variables
+
+After confirming stat increases to party member, it would go opposite, party member's stats now equal statsp#
+
+FIGURE OUT HOW TO DO PARTY MEMBER EQUIPMENT STATS TOO!!!
+
+As a matter of fact, figure out how to do player equipment as well!
+
+... Figure out how to do party level ups as well...

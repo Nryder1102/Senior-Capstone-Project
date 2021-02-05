@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - ClassManager
     - GameManager
+    - ItemManager
     - PartyManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -32,6 +33,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
@@ -71,11 +73,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12830}
     - Class: 114
+      Script: {instanceID: 13116}
+    - Class: 114
       Script: {instanceID: 13172}
     - Class: 114
       Script: {instanceID: 13190}
     - Class: 114
       Script: {instanceID: 13576}
+    - Class: 114
+      Script: {instanceID: 13778}
     - Class: 114
       Script: {instanceID: 13842}
     - Class: 114
@@ -377,7 +383,7 @@ ScriptsOnlyBuild:
     className: Benchmark01
   - hash:
       serializedVersion: 2
-      Hash: fe4e33a3b66d689588c3c6edad8d9427
+      Hash: 30bc0cc7d71e8b2a065773e14f88d04f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ClassManager
@@ -701,7 +707,7 @@ ScriptsOnlyBuild:
     className: TMPro_InstructionOverlay
   - hash:
       serializedVersion: 2
-      Hash: 8a28359c21e32a01e0cc83a6e6c3a939
+      Hash: 7a020aee4ff84c64299b823747a0c0bf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -831,6 +837,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyManager
   platform: 5
   scenePathNames:
   - Assets/Scenes/Play Space.unity

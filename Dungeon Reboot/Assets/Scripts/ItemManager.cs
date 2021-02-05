@@ -8,6 +8,10 @@ public class ItemManager : MonoBehaviour
 
     public static int wpnatk = 0;
     public static int armdef = 0;
+    public static int wpnatkp1;
+    public static int wpnatkp2;
+    public static int armdefp1;
+    public static int armdefp2;
 
 
 
