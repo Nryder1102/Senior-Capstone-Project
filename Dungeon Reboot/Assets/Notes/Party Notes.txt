@@ -10,6 +10,9 @@ This is going to be really annoying
 Like, REALLY annoying, as I have to repeat each character's stats per slot
 This is going to be SO many variables
 
+Variable count as of 2/6/2021: 50
+^ It's not done yet either
+
 After confirming stat increases to party member, it would go opposite, party member's stats now equal statsp#
 
 FIGURE OUT HOW TO DO PARTY MEMBER EQUIPMENT STATS TOO!!!

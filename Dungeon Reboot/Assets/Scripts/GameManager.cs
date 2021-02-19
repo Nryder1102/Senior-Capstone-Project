@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public static string statPlayerName = "Name";
     public InputField playerName;
     public GameObject playerNameEntry;
+    public Button playerNameConfirm;
     public static int playerRace;
     public static string playerRaceName;
     public GameObject playerRaceSelect;
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
         statusUI.SetActive(false);
         menuUI.SetActive(false);
         playerNameEntry.SetActive(true);
+        playerNameConfirm.interactable = false;
     }
 
     // Update is called once per frame
@@ -269,13 +271,28 @@ public class GameManager : MonoBehaviour
             PartyManager.attrp2 = PartyManager.attrp2Flag;
             selectedChar = 1;
     }
-
+    
+    public void NameButton()
+    {
+        if(playerName.text != null)
+        {
+            playerNameConfirm.interactable = true;
+        }
+    }
+    public void NameConfirm()
+    {
+        SaveName();
+    }
     public void SaveName()
     {
+        if(playerName.text != null)
+        {  
+        playerNameConfirm.interactable = false;
         statPlayerName = playerName.text.ToString();
         playerNameEntry.SetActive(false);
         //playerRaceSelect.SetActive(true);
         classSelectUI.SetActive(true);
+        }
     }
 
     public void SelectRace1()
