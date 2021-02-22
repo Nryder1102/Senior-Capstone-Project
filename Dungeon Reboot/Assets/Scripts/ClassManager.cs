@@ -170,6 +170,28 @@ public class ClassManager : MonoBehaviour
             lukmin.interactable = false;
         }
 
+        if(GameManager.selectedChar == 2 && PartyManager.attrp1Flag == 0)
+        {
+            strplus.interactable = false;
+            vitplus.interactable = false;
+            dexplus.interactable = false;
+            intplus.interactable = false;
+            chaplus.interactable = false;
+            lukplus.interactable = false;
+        }
+
+        if(GameManager.selectedChar == 3 && PartyManager.attrp2Flag == 0)
+        {
+            strplus.interactable = false;
+            vitplus.interactable = false;
+            dexplus.interactable = false;
+            intplus.interactable = false;
+            chaplus.interactable = false;
+            lukplus.interactable = false;
+        }
+
+
+
     }
 
     
@@ -372,6 +394,15 @@ public class ClassManager : MonoBehaviour
         dexVal.text = "" + dex;
         chaVal.text = "" + cha;
         lukVal.text = "" + luk;
+        if(level <= 9)
+            {
+                levelNum.text = "Level: " + level;
+            }
+        if(level >= 10)
+            {
+                levelNum.text = "Level: ";
+                levelNumDD.text = "" + level;
+            }
         if(GameManager.classnum != 2)
         {
             atk = ItemManager.wpnatk + str + vit/2;
@@ -441,6 +472,25 @@ public class ClassManager : MonoBehaviour
         {
         statClass.text = PartyManager.classNamep1;
         statName.text = PartyManager.statNamep1;
+        strVal.text = "" + PartyManager.strp1;
+        vitVal.text = "" + PartyManager.vitp1;
+        intelVal.text = "" + PartyManager.intelp1;
+        dexVal.text = "" + PartyManager.dexp1;
+        chaVal.text = "" + PartyManager.chap1;
+        lukVal.text = "" + PartyManager.lukp1;
+        attack.text = "" + PartyManager.atkp1;
+        defense.text = "" + PartyManager.defp1;
+        statHealth.text = PartyManager.healthp1 + "/" + PartyManager.healthMaxp1;
+        statMana.text = PartyManager.manap1 + "/" + PartyManager.manaMaxp1;  
+        if(PartyManager.levelp1 <= 9)
+            {
+                levelNum.text = "Level: " + PartyManager.levelp1;
+            }
+        if(PartyManager.levelp1 >= 10)
+            {
+                levelNum.text = "Level: ";
+                levelNumDD.text = "" + PartyManager.levelp1;
+            }
         if(PartyManager.attrp1 >= 1)
         {
             strplus.interactable = true;
@@ -488,6 +538,25 @@ public class ClassManager : MonoBehaviour
         {
         statClass.text = PartyManager.classNamep2;
         statName.text = PartyManager.statNamep2;
+        strVal.text = "" + PartyManager.strp2;
+        vitVal.text = "" + PartyManager.vitp2;
+        intelVal.text = "" + PartyManager.intelp2;
+        dexVal.text = "" + PartyManager.dexp2;
+        chaVal.text = "" + PartyManager.chap2;
+        lukVal.text = "" + PartyManager.lukp2;
+        attack.text = "" + PartyManager.atkp2;
+        defense.text = "" + PartyManager.defp2;
+        statHealth.text = PartyManager.healthp2 + "/" + PartyManager.healthMaxp2;
+        statMana.text = PartyManager.manap2 + "/" + PartyManager.manaMaxp2;  
+        if(PartyManager.levelp2 <= 9)
+            {
+                levelNum.text = "Level: " + PartyManager.levelp2;
+            }
+        if(PartyManager.levelp2 >= 10)
+            {
+                levelNum.text = "Level: ";
+                levelNumDD.text = "" + PartyManager.levelp2;
+            }
         if(PartyManager.attrp2 >= 1)
         {
             strplus.interactable = true;
@@ -782,6 +851,8 @@ public class ClassManager : MonoBehaviour
     }
     public void DexterityPlus()
     {
+        if(GameManager.selectedChar == 1)
+        {
         if(dex != 20)
             {
             dex += 1;
@@ -798,9 +869,52 @@ public class ClassManager : MonoBehaviour
             lukplus.interactable = false;
         }
             dexmin.interactable = true;
+        }
+
+        if(GameManager.selectedChar == 2)
+        {
+        if(PartyManager.dexp1 != 20)
+            {
+            PartyManager.dexp1 += 1;
+            PartyManager.attrp1 -= 1;
+            }
+            attrConfirm = 1;
+        if(PartyManager.attrp1 == 0)
+        {
+            strplus.interactable = false;
+            vitplus.interactable = false;
+            dexplus.interactable = false;
+            intplus.interactable = false;
+            chaplus.interactable = false;
+            lukplus.interactable = false;
+        }
+            dexmin.interactable = true;
+        }
+
+        if(GameManager.selectedChar == 3)
+        {
+        if(PartyManager.dexp2 != 20)
+            {
+            PartyManager.dexp2 += 1;
+            PartyManager.attrp2 -= 1;
+            }
+            attrConfirm = 1;
+        if(PartyManager.attrp2 == 0)
+        {
+            strplus.interactable = false;
+            vitplus.interactable = false;
+            dexplus.interactable = false;
+            intplus.interactable = false;
+            chaplus.interactable = false;
+            lukplus.interactable = false;
+        }
+            dexmin.interactable = true;
+        }
     }
     public void DexterityMin()
     {
+        if(GameManager.selectedChar == 1)
+        {
         if(attr >= 0 && attrConfirm == 1)
         {
             dex -= 1;
@@ -816,6 +930,45 @@ public class ClassManager : MonoBehaviour
         {
             dexmin.interactable = false;
         }
+        }
+
+        if(GameManager.selectedChar == 2)
+        {
+        if(PartyManager.attrp1 >= 0 && attrConfirm == 1)
+        {
+            PartyManager.dexp1 -= 1;
+            PartyManager.attrp1 += 1;
+            strplus.interactable = true;
+            vitplus.interactable = true;
+            dexplus.interactable = true;
+            intplus.interactable = true;
+            chaplus.interactable = true;
+            lukplus.interactable = true;
+        }
+        if(PartyManager.attrp1 == PartyManager.attrp1Flag || PartyManager.dexp1 == PartyManager.dexp1Flag)
+        {
+            dexmin.interactable = false;
+        }
+        }  
+
+        if(GameManager.selectedChar == 3)
+        {
+        if(PartyManager.attrp2 >= 0 && attrConfirm == 1)
+        {
+            PartyManager.dexp2 -= 1;
+            PartyManager.attrp2 += 1;
+            strplus.interactable = true;
+            vitplus.interactable = true;
+            dexplus.interactable = true;
+            intplus.interactable = true;
+            chaplus.interactable = true;
+            lukplus.interactable = true;
+        }
+        if(PartyManager.attrp2 == PartyManager.attrp2Flag || PartyManager.dexp2 == PartyManager.dexp2Flag)
+        {
+            dexmin.interactable = false;
+        }
+        }  
     }
     public void IntelligencePlus()
     {
@@ -928,6 +1081,33 @@ public class ClassManager : MonoBehaviour
         if(attr == attrFlag || luk == lukFlag)
         {
             lukmin.interactable = false;
+        }
+    }
+
+    public void AttributeUpdate()
+    {
+        attrConfirm = 0;
+        if(GameManager.selectedChar == 1)
+        {
+            attrFlag = attr;
+            strFlag = str;
+            vitFlag = vit;
+            dexFlag = dex;
+            intFlag = intel;
+            chaFlag = cha;
+            lukFlag = luk;
+            healthMaxFlag = healthMax;
+            manaMaxFlag = manaMax;
+        }
+
+        if(GameManager.selectedChar == 2)
+        {
+
+        }
+
+        if(GameManager.selectedChar == 3)
+        {
+
         }
     }
 

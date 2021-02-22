@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public static int playerRace;
     public static string playerRaceName;
     public GameObject playerRaceSelect;
+    public GameObject playerCreation;
     
     
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
         skillUI.SetActive(false);
         statusUI.SetActive(false);
         menuUI.SetActive(false);
+        playerCreation.SetActive(true);
         playerNameEntry.SetActive(true);
         playerNameConfirm.interactable = false;
     }
@@ -352,7 +354,6 @@ public class GameManager : MonoBehaviour
         PartyManager.manaMaxp1 = PartyManager.manaMaxp1Flag;
         PartyManager.attrp1 = PartyManager.attrp1Flag;
         ClassManager.attrConfirm = 0;
-
     }
     public void CharSelect3()
     {

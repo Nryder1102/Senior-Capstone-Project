@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class PartyManager : MonoBehaviour
 {
-
+ 
 //Stat Manager Variables
     public static int attrp1 = 0;
-    public static int attrp2 = 0;
+    public static int attrp2 = 3;
     public static int attrp1Flag = 0;
-    public static int attrp2Flag = 0;
+    public static int attrp2Flag = 3;
     public static int strp1;
     public static int strp2;
     public static int strp1Flag;
@@ -57,6 +57,12 @@ public class PartyManager : MonoBehaviour
     public static string levelNump2;
     public static int levelp1;
     public static int levelp2;
+    public static int atkp1;
+    public static int atkp2;
+    public static int defp1;
+    public static int defp2;
+    public static int characterSlot1 = 1;
+    public static int characterSlot2 = 1;
 
 
 
@@ -76,6 +82,35 @@ public class PartyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CharacterStatUpdater();
+    }
+
+
+    public void CharacterStatUpdater()
+    {
+        if(characterSlot1 == 1)
+        {
+            attrp1 = 0;
+            strp1 = 0;
+            vitp1 = 0;
+            dexp1 = 0;
+            intelp1 = 0;
+            chap1 = 0;
+            lukp1 = 0;
+        }
+    }
+    public void CharacterSwitch()
+    {
         
+    }
+
+    public void CSwitchSlot1()
+    {
+
+    }
+
+    public void CSwitchSlot2()
+    {
+
     }
 }
