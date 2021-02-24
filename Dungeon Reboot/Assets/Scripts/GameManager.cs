@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     public GameObject statusUI;
     public GameObject skillUI;
     public GameObject menuUI;
+    public GameObject invUI;
+    public GameObject saveUI;
+    public GameObject loadUI;
     public static float waitVal;
     public static int waitFlag;
     public int menuState = 0;
@@ -34,6 +37,7 @@ public class GameManager : MonoBehaviour
     public static string playerRaceName;
     public GameObject playerRaceSelect;
     public GameObject playerCreation;
+
     
     
     // Start is called before the first frame update
@@ -45,6 +49,9 @@ public class GameManager : MonoBehaviour
         skillUI.SetActive(false);
         statusUI.SetActive(false);
         menuUI.SetActive(false);
+        invUI.SetActive(false);
+        loadUI.SetActive(false);
+        saveUI.SetActive(false);
         playerCreation.SetActive(true);
         playerNameEntry.SetActive(true);
         playerNameConfirm.interactable = false;
@@ -225,7 +232,11 @@ public class GameManager : MonoBehaviour
         list.SetActive(false);
         statusUI.SetActive(true);
     }
-
+    public void OpenInventory()
+    {
+        list.SetActive(false);
+        invUI.SetActive(true);
+    }
     public void QuitConfirmation()
     {
         confirmQuit.SetActive(true);
@@ -273,7 +284,10 @@ public class GameManager : MonoBehaviour
             PartyManager.attrp2 = PartyManager.attrp2Flag;
             selectedChar = 1;
     }
-    
+    public void InvBack()
+    {
+        invUI.SetActive(false);
+        list.SetActive(true);    }
     public void NameButton()
     {
         if(playerName.text != null)
@@ -372,5 +386,9 @@ public class GameManager : MonoBehaviour
 
 
 
+
+
+
+    //Space to start making inventory management, using the items from item manager
 
 }

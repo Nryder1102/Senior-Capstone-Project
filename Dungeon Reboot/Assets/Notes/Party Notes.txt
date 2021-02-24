@@ -20,3 +20,7 @@ FIGURE OUT HOW TO DO PARTY MEMBER EQUIPMENT STATS TOO!!!
 As a matter of fact, figure out how to do player equipment as well!
 
 ... Figure out how to do party level ups as well...
+
+Alright, so, player stat saving is done, at least during a single run, need to figure out a way to save through exiting
+
+Next up, party members stat distrubution and actually making the stats for the members/monsters. Why do you do this to yourself?
