@@ -391,21 +391,37 @@ public class GameManager : MonoBehaviour
     //Space to start making inventory management, using the items from item manager
     public void WeaponTab()
     {
-        ItemManager.weap
+        ItemManager.weapTab = true;
+        ItemManager.armTab = false;
+        ItemManager.miscTab = false;
+        ItemManager.keyTab = false;
+        objectPage = 1;
     }
     
     public void ArmorTab()
     {
-
+        ItemManager.weapTab = false;
+        ItemManager.armTab = true;
+        ItemManager.miscTab = false;
+        ItemManager.keyTab = false;
+        objectPage = 1;
     }
 
     public void MiscTab()
     {
-
+        ItemManager.weapTab = false;
+        ItemManager.armTab = false;
+        ItemManager.miscTab = true;
+        ItemManager.keyTab = false;
+        objectPage = 1;
     }
 
     public void KeyTab()
     {
-
+        ItemManager.weapTab = false;
+        ItemManager.armTab = false;
+        ItemManager.miscTab = false;
+        ItemManager.keyTab = true;
+        objectPage = 1;
     }
 }
