@@ -6,12 +6,22 @@ using UnityEngine.UI;
 public class ItemManager : MonoBehaviour
 {
  
+    //For Stats
     public static int wpnatk = 0;
     public static int armdef = 0;
     public static int wpnatkp1;
     public static int wpnatkp2;
     public static int armdefp1;
     public static int armdefp2;
+
+    //For the inventory system
+    public static bool weapTab;
+    public static bool armTab;
+    public static bool miscTab;
+    public static bool keyTab;
+    public static int WeapEquipped;
+    public static int ArmEquipped;    
+
 
 
 
@@ -26,7 +36,8 @@ public class ItemManager : MonoBehaviour
     {
         
     }
-
+    
+    //Items list
     public void EquippedWeapons()
     {
 
@@ -36,6 +47,9 @@ public class ItemManager : MonoBehaviour
     {
         
     }
+
+
+    //WEAPONS LIST STARTS HERE
     public void BrokenSword()
     {
         wpnatk = 2;
@@ -44,4 +58,24 @@ public class ItemManager : MonoBehaviour
     {
         wpnatk = 5;
     }
+
+
+
+
+
+    //ARMOR LIST STARTS HERE
+
+
+
+
+
+
+
+    //MISC/CONSUMABLES START HERE
+
+
+
+
+
+    //KEY ITEMS START HERE
 }

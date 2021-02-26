@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     public static string playerRaceName;
     public GameObject playerRaceSelect;
     public GameObject playerCreation;
+    public int objectPage = 1;
 
     
     
@@ -79,9 +80,10 @@ public class GameManager : MonoBehaviour
             menuUI.SetActive(!isActive);
             confirmQuit.SetActive(false);
             StatsBack();
+            InvBack();
+            objectPage = 1;
         }
     }
-
 
     //Controls what buttons choose which class
     public void ClassStart()
@@ -287,13 +289,11 @@ public class GameManager : MonoBehaviour
     public void InvBack()
     {
         invUI.SetActive(false);
-        list.SetActive(true);    }
+        list.SetActive(true);    
+    }
     public void NameButton()
     {
-        if(playerName.text != null)
-        {
-            playerNameConfirm.interactable = true;
-        }
+        playerNameConfirm.interactable = !string.IsNullOrWhiteSpace(playerName.text);
     }
     public void NameConfirm()
     {
@@ -301,14 +301,13 @@ public class GameManager : MonoBehaviour
     }
     public void SaveName()
     {
-        if(playerName.text != null)
-        {  
+        
         playerNameConfirm.interactable = false;
         statPlayerName = playerName.text.ToString();
         playerNameEntry.SetActive(false);
         //playerRaceSelect.SetActive(true);
         classSelectUI.SetActive(true);
-        }
+        
     }
 
     public void SelectRace1()
@@ -390,5 +389,23 @@ public class GameManager : MonoBehaviour
 
 
     //Space to start making inventory management, using the items from item manager
+    public void WeaponTab()
+    {
+        ItemManager.weap
+    }
+    
+    public void ArmorTab()
+    {
 
+    }
+
+    public void MiscTab()
+    {
+
+    }
+
+    public void KeyTab()
+    {
+
+    }
 }
