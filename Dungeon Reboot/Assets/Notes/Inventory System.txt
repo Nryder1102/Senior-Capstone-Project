@@ -8,3 +8,11 @@ Wait, no need, if I make the items functions, it'll change in there
 Tabs will change what's being shown to their pages
 
 Use equip indicators to well, indicate equipment
+
+Inventory Completion:
+
+Tabs, Buttons that should go to next page, Layout
+
+Things to do:
+
+Display item stats, actually equip items

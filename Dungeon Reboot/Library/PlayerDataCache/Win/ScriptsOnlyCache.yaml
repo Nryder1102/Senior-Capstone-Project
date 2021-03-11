@@ -2,9 +2,12 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - ClassManager
+    - DialogueManager
+    - EnemyManager
     - GameManager
     - ItemManager
     - PartyManager
+    - SoundManager
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -54,46 +57,58 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11332}
+      Script: {instanceID: 11344}
     - Class: 114
-      Script: {instanceID: 11582}
+      Script: {instanceID: 11596}
     - Class: 114
-      Script: {instanceID: 11638}
+      Script: {instanceID: 11652}
     - Class: 114
-      Script: {instanceID: 12226}
+      Script: {instanceID: 12244}
     - Class: 114
-      Script: {instanceID: 12276}
+      Script: {instanceID: 12296}
     - Class: 114
-      Script: {instanceID: 12466}
+      Script: {instanceID: 12486}
     - Class: 114
-      Script: {instanceID: 12830}
+      Script: {instanceID: 12514}
     - Class: 114
-      Script: {instanceID: 13116}
+      Script: {instanceID: 12658}
     - Class: 114
-      Script: {instanceID: 13172}
+      Script: {instanceID: 12854}
     - Class: 114
-      Script: {instanceID: 13190}
+      Script: {instanceID: 13142}
     - Class: 114
-      Script: {instanceID: 13576}
+      Script: {instanceID: 13198}
     - Class: 114
-      Script: {instanceID: 13778}
+      Script: {instanceID: 13216}
     - Class: 114
-      Script: {instanceID: 13842}
+      Script: {instanceID: 13302}
     - Class: 114
-      Script: {instanceID: 13898}
+      Script: {instanceID: 13606}
     - Class: 114
-      Script: {instanceID: 13950}
+      Script: {instanceID: 13808}
     - Class: 114
-      Script: {instanceID: 14014}
+      Script: {instanceID: 13872}
     - Class: 114
-      Script: {instanceID: 14164}
+      Script: {instanceID: 13928}
     - Class: 114
-      Script: {instanceID: 14212}
+      Script: {instanceID: 13980}
+    - Class: 114
+      Script: {instanceID: 14044}
+    - Class: 114
+      Script: {instanceID: 14198}
+    - Class: 114
+      Script: {instanceID: 14246}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -383,10 +398,16 @@ ScriptsOnlyBuild:
     className: Benchmark01
   - hash:
       serializedVersion: 2
-      Hash: 30bc0cc7d71e8b2a065773e14f88d04f
+      Hash: fb746bb8728b46b94a6e38398591c629
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ClassManager
+  - hash:
+      serializedVersion: 2
+      Hash: 9eed0e17f61d68c17853533166f4e0c0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundManager
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -429,6 +450,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: VertexJitter
+  - hash:
+      serializedVersion: 2
+      Hash: de382029553188e36593f63eca6e498c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DialogueManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -521,7 +548,7 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 35a9693c388776aaf487636491a20f11
+      Hash: a9f049c3dc82bb36fdb142e4d6a2658d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
@@ -561,6 +588,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_TextSelector_A
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyManager
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
@@ -683,7 +716,7 @@ ScriptsOnlyBuild:
     className: VertexZoom
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 494f7aad8be6285f409da349be266fa5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ItemManager
@@ -707,7 +740,7 @@ ScriptsOnlyBuild:
     className: TMPro_InstructionOverlay
   - hash:
       serializedVersion: 2
-      Hash: 7a020aee4ff84c64299b823747a0c0bf
+      Hash: 539fd7c933639a24be28ff8b5f6d99ef
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -842,8 +875,8 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: EnemyManager
+    className: DialogueTrigger
   platform: 5
   scenePathNames:
   - Assets/Scenes/Play Space.unity
-  playerPath: C:/Users/CyberPatriot/Documents/Dungeon Reboot.exe
+  playerPath: C:/Users/CyberPatriot/Desktop/Dungeon Reboot.exe

@@ -55,9 +55,9 @@ public class ClassManager : MonoBehaviour
     public Text levelNum;
     public Text levelNumDD;
     public Button checkConfirm;
-    public string className;
+    public static string className;
 
-
+ 
     //Bars
     int health;
     int mana;
@@ -84,8 +84,14 @@ public class ClassManager : MonoBehaviour
     public Text defense;
     public Text statHealth;
     public Text statMana;
- 
 
+
+
+    //Easter Eggs
+    public static bool Egg1;
+ 
+    //The singular sound that I'm too tired to figure out how to bring over from Soundmanager
+    public AudioSource levelUpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -370,6 +376,7 @@ public class ClassManager : MonoBehaviour
                 levelNum.text = "Level: ";
                 levelNumDD.text = "" + level;
             }
+            levelUpSound.Play();
         }
 
         if (level == 20 && levelMax == 0)

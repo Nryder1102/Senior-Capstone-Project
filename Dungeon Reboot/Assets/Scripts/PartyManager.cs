@@ -85,7 +85,7 @@ public class PartyManager : MonoBehaviour
         CharacterStatUpdater();
     }
 
-
+ 
     public void CharacterStatUpdater()
     {
         if(characterSlot1 == 1)

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
+    //Class Select
     public Button roguebttn;
     public Button magebttn;
     public Button paladinbttn;
@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public Button cconfirm;
     public static int classnum = 0;
     public static int cconfirm2 = 0;
+
+    //Individual UI Groups
     public GameObject classSelectUI;
     public GameObject barsUI;
     public GameObject statusUI;
@@ -23,13 +25,26 @@ public class GameManager : MonoBehaviour
     public GameObject invUI;
     public GameObject saveUI;
     public GameObject loadUI;
+
+    //Wait Function variables
     public static float waitVal;
     public static int waitFlag;
+
+    //Default state and opening and closing of menu
     public int menuState = 0;
     public GameObject list;
+
+    //Well, confirm quitting the game
     public GameObject confirmQuit;
+
+    //Status Screen
     public static int selectedChar = 0;
     public static string statPlayerName = "Name";
+    public GameObject charPic1;
+    public GameObject charPic2;
+    public GameObject charPic3;
+
+    //Character Creation
     public InputField playerName;
     public GameObject playerNameEntry;
     public Button playerNameConfirm;
@@ -37,7 +52,27 @@ public class GameManager : MonoBehaviour
     public static string playerRaceName;
     public GameObject playerRaceSelect;
     public GameObject playerCreation;
-    public int objectPage = 1;
+    public GameObject playerGenderSelect;
+    public static string playerGender;
+    public Button playerPronounConfirm;
+    public Sprite egg1;
+
+    //Inventory
+    public static int objectPage = 1;
+    public Button objectLeft;
+    public Button objectRight;
+    public static int currentTab;
+
+
+
+    //Intro
+    public GameObject introScene;
+
+
+
+
+
+
 
     
     
@@ -54,8 +89,12 @@ public class GameManager : MonoBehaviour
         loadUI.SetActive(false);
         saveUI.SetActive(false);
         playerCreation.SetActive(true);
-        playerNameEntry.SetActive(true);
+        playerNameEntry.SetActive(false);
         playerNameConfirm.interactable = false;
+        playerPronounConfirm.interactable = false;
+        objectLeft.interactable = false;
+        introScene.SetActive(true);
+        playerGenderSelect.SetActive(true);
     }
 
     // Update is called once per frame
@@ -65,7 +104,6 @@ public class GameManager : MonoBehaviour
         
         if (waitFlag == 1)
         {
-            classSelectUI.SetActive(false);
             barsUI.SetActive(true);
             waitFlag = 0;
         }
@@ -83,6 +121,23 @@ public class GameManager : MonoBehaviour
             InvBack();
             objectPage = 1;
         }
+
+        if(objectPage == 3)
+        {
+            objectRight.interactable = false;
+        }
+        if(objectPage != 3)
+        {
+            objectRight.interactable = true;
+        }
+        if(objectPage == 1)
+        {
+            objectLeft.interactable = false;
+        }
+        if(objectPage != 1)
+        {
+            objectLeft.interactable = true;
+        }
     }
 
     //Controls what buttons choose which class
@@ -90,6 +145,17 @@ public class GameManager : MonoBehaviour
     {
         classSelectUI.SetActive(true);
     }
+
+    public void NameEntryStart()
+    {
+        playerNameEntry.SetActive(true);
+    }
+
+    public void GenderEntryStart()
+    {
+        playerGenderSelect.SetActive(true);
+    }
+
 
     //Chooses which class you select
     public void ClassSelect1()
@@ -148,9 +214,10 @@ public class GameManager : MonoBehaviour
     {
         BttnDisable();
         cconfirm.interactable = false;
-        waitVal = 2;
-        StartCoroutine(WaitRoutine());
-  
+        classSelectUI.SetActive(false);
+        //For testing purposes
+        playerNameEntry.SetActive(true);
+
     }
     
     //Disables other class selections
@@ -233,11 +300,13 @@ public class GameManager : MonoBehaviour
     {
         list.SetActive(false);
         statusUI.SetActive(true);
+
     }
     public void OpenInventory()
     {
         list.SetActive(false);
         invUI.SetActive(true);
+
     }
     public void QuitConfirmation()
     {
@@ -289,25 +358,54 @@ public class GameManager : MonoBehaviour
     public void InvBack()
     {
         invUI.SetActive(false);
-        list.SetActive(true);    
+        list.SetActive(true);  
     }
+
+//These deal with the player name
     public void NameButton()
     {
         playerNameConfirm.interactable = !string.IsNullOrWhiteSpace(playerName.text);
     }
     public void NameConfirm()
     {
-        SaveName();
-    }
-    public void SaveName()
-    {
-        
         playerNameConfirm.interactable = false;
         statPlayerName = playerName.text.ToString();
         playerNameEntry.SetActive(false);
-        //playerRaceSelect.SetActive(true);
+        if(statPlayerName == "James " && classnum == 6 && playerGender == "male")
+        {
+            this.charPic1.GetComponent<Image>().overrideSprite = egg1;
+            ClassManager.Egg1 = true;
+            statPlayerName = "James";
+            ClassManager.className = "Trainer";
+        }
+        waitVal = 2;
+        StartCoroutine(WaitRoutine());
+    }
+
+//Here should handle player pronoun choice
+    public void PronounChoice1()
+    {
+        playerGender = "male";
+        playerPronounConfirm.interactable = true;
+    }
+    public void PronounChoice2()
+    {
+        playerGender = "female";
+        playerPronounConfirm.interactable = true;
+    }
+    public void PronounChoice3()
+    {
+        playerGender = "nb";
+        playerPronounConfirm.interactable = true;
+    }
+    public void PronounConfirm()
+    {
+        playerPronounConfirm.interactable = false;
+        playerGenderSelect.SetActive(false);
+
+        //For testing purposes
         classSelectUI.SetActive(true);
-        
+        Debug.Log(playerGender);
     }
 
     public void SelectRace1()
@@ -338,6 +436,9 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+
+
 //Changes which character slot is selected on the party menu
     public void CharSelect1()
     {
@@ -383,8 +484,8 @@ public class GameManager : MonoBehaviour
         ClassManager.attrConfirm = 0;
     }
 
-
-
+//Space where the "Voice in your Head" comments on your name, class, and race
+    
 
 
 
@@ -396,6 +497,7 @@ public class GameManager : MonoBehaviour
         ItemManager.miscTab = false;
         ItemManager.keyTab = false;
         objectPage = 1;
+        currentTab = 1;
     }
     
     public void ArmorTab()
@@ -405,6 +507,7 @@ public class GameManager : MonoBehaviour
         ItemManager.miscTab = false;
         ItemManager.keyTab = false;
         objectPage = 1;
+        currentTab = 2;
     }
 
     public void MiscTab()
@@ -414,6 +517,7 @@ public class GameManager : MonoBehaviour
         ItemManager.miscTab = true;
         ItemManager.keyTab = false;
         objectPage = 1;
+        currentTab = 3;
     }
 
     public void KeyTab()
@@ -423,5 +527,27 @@ public class GameManager : MonoBehaviour
         ItemManager.miscTab = false;
         ItemManager.keyTab = true;
         objectPage = 1;
+        currentTab = 4;
     }
+
+    public void InvLeftArrow()
+    {
+
+        if(objectPage != 1)
+        {
+            objectLeft.interactable = true;
+            objectPage -= 1;
+        }
+    }
+
+    public void InvRightArrow()
+    {
+        if(objectPage != 3)
+        {
+            objectRight.interactable = true;
+            objectPage += 1;
+        }
+    }
+
+
 }
