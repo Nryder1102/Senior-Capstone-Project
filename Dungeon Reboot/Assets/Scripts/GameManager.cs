@@ -321,6 +321,7 @@ public class GameManager : MonoBehaviour
         confirmQuit.SetActive(false);
     }
 
+    //Sets the party menu to the default state on exiting menu
     public void StatsBack()
     {
             statusUI.SetActive(false);
@@ -483,9 +484,6 @@ public class GameManager : MonoBehaviour
         PartyManager.attrp2 = PartyManager.attrp2Flag;
         ClassManager.attrConfirm = 0;
     }
-
-//Space where the "Voice in your Head" comments on your name, class, and race
-    
 
 
 

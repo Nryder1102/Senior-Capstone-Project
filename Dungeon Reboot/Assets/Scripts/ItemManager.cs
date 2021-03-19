@@ -48,6 +48,8 @@ public class ItemManager : MonoBehaviour
     public Sprite player3Indicator;
 
 
+    //Variables for the shinies
+
 
 
     // Start is called before the first frame update

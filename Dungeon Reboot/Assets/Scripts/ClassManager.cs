@@ -20,7 +20,7 @@ public class ClassManager : MonoBehaviour
     private int levelMax = 0;
     //Dodge Chance + 5%/1 point(?) (From 5% base)
     public static int dex = 0;
-    //Attack Strength/(Maybe Defense too?) + 1/Point (Adds on to weapon attack)
+    //Attack Strength + 1/Point, Defense + 1 (Adds on to weapon attack)
     public static int str = 0;
     //Health + 5/1 point(?) (Adds on to class base)
     public static int vit = 0;
@@ -979,26 +979,73 @@ public class ClassManager : MonoBehaviour
     }
     public void IntelligencePlus()
     {
-        if(intel != 20)
+        if(GameManager.selectedChar == 1)
         {
-        intel += 1;
-        attr -= 1;
-        manaMax += 5;
-        }
+            if(intel != 20)
+            {
+                intel += 1;
+                attr -= 1;
+                manaMax += 5;
+            }
         attrConfirm = 1;
-        if(attr == 0)
-        {
-        strplus.interactable = false;
-        vitplus.interactable = false;
-        dexplus.interactable = false;
-        intplus.interactable = false;
-        chaplus.interactable = false;
-        lukplus.interactable = false;
-        }
+            if(attr == 0)
+            {
+                strplus.interactable = false;
+                vitplus.interactable = false;
+                dexplus.interactable = false;
+                intplus.interactable = false;
+                chaplus.interactable = false;
+                lukplus.interactable = false;
+            }
         intmin.interactable = true;
+        }
+
+        if(GameManager.selectedChar == 2)
+        {
+            if(PartyManager.intelp1 != 20)
+            {
+                PartyManager.intelp1 += 1;
+                PartyManager.attrp1 -= 1;
+                PartyManager.manaMaxp1 += 5;
+            }
+        attrConfirm = 1;
+            if(PartyManager.attrp1 == 0)
+            {
+                strplus.interactable = false;
+                vitplus.interactable = false;
+                dexplus.interactable = false;
+                intplus.interactable = false;
+                chaplus.interactable = false;
+                lukplus.interactable = false;
+            }
+        intmin.interactable = true;
+        }
+
+        if(GameManager.selectedChar == 3)
+        {
+            if(PartyManager.intelp2 != 20)
+            {
+                PartyManager.intelp2 += 1;
+                PartyManager.attrp2 -= 1;
+                PartyManager.manaMaxp2 += 5;
+            }
+        attrConfirm = 1;
+            if(PartyManager.attrp2 == 0)
+            {
+                strplus.interactable = false;
+                vitplus.interactable = false;
+                dexplus.interactable = false;
+                intplus.interactable = false;
+                chaplus.interactable = false;
+                lukplus.interactable = false;
+            }
+        intmin.interactable = true;
+        }
     }
     public void IntelligenceMin()
     {
+        if(GameManager.classnum == 1)
+        {
         if(attr >= 0 && attrConfirm == 1)
         {
             manaMax -= 5;
@@ -1015,9 +1062,52 @@ public class ClassManager : MonoBehaviour
         {
             intmin.interactable = false;
         }
+        }
+
+        if(GameManager.classnum == 2)
+        {
+        if(PartyManager.attrp1 >= 0 && attrConfirm == 1)
+        {
+            PartyManager.manaMaxp1 -= 5;
+            PartyManager.intelp1 -= 1;
+            PartyManager.attrp1 += 1;
+            strplus.interactable = true;
+            vitplus.interactable = true;
+            dexplus.interactable = true;
+            intplus.interactable = true;
+            chaplus.interactable = true;
+            lukplus.interactable = true;
+        }
+        if(PartyManager.attrp1 == PartyManager.attrp1Flag || PartyManager.intelp1 == PartyManager.intp1Flag)
+        {
+            intmin.interactable = false;
+        }
+        }
+
+        if(GameManager.classnum == 3)
+        {
+        if(PartyManager.attrp2 >= 0 && attrConfirm == 1)
+        {
+            PartyManager.manaMaxp2 -= 5;
+            PartyManager.intelp2 -= 1;
+            PartyManager.attrp2 += 1;
+            strplus.interactable = true;
+            vitplus.interactable = true;
+            dexplus.interactable = true;
+            intplus.interactable = true;
+            chaplus.interactable = true;
+            lukplus.interactable = true;
+        }
+        if(PartyManager.attrp2 == PartyManager.attrp2Flag || PartyManager.intelp2 == PartyManager.intp2Flag)
+        {
+            intmin.interactable = false;
+        }
+        }
     }
     public void CharismaPlus()
     {
+        if(GameManager.classnum == 1)
+        {
         if(cha != 20)
         {
         cha += 1;
@@ -1034,9 +1124,52 @@ public class ClassManager : MonoBehaviour
         lukplus.interactable = false;
         }
         chamin.interactable = true;
+        }
+
+        if(GameManager.classnum == 2)
+        {
+        if(PartyManager.chap1 != 20)
+        {
+        PartyManager.chap1 += 1;
+        PartyManager.attrp1 -= 1;
+        }
+        attrConfirm = 1;
+        if(PartyManager.attrp1 == 0)
+        {
+        strplus.interactable = false;
+        vitplus.interactable = false;
+        dexplus.interactable = false;
+        intplus.interactable = false;
+        chaplus.interactable = false;
+        lukplus.interactable = false;
+        }
+        chamin.interactable = true;
+        }
+
+        if(GameManager.classnum == 3)
+        {
+        if(PartyManager.chap2 != 20)
+        {
+        PartyManager.chap2 += 1;
+        PartyManager.attrp2 -= 1;
+        }
+        attrConfirm = 1;
+        if(PartyManager.attrp2 == 0)
+        {
+        strplus.interactable = false;
+        vitplus.interactable = false;
+        dexplus.interactable = false;
+        intplus.interactable = false;
+        chaplus.interactable = false;
+        lukplus.interactable = false;
+        }
+        chamin.interactable = true;
+        }
     }
     public void CharismaMin()
     {
+        if(GameManager.classnum == 1)
+        {
         if(attr >= 0 && attrConfirm == 1)
         {
             cha -= 1;
@@ -1052,9 +1185,50 @@ public class ClassManager : MonoBehaviour
         {
             chamin.interactable = false;
         }
+        }
+
+        if(GameManager.classnum == 2)
+        {
+        if(PartyManager.attrp1 >= 0 && attrConfirm == 1)
+        {
+            PartyManager.chap1 -= 1;
+            PartyManager.attrp1 += 1;
+            strplus.interactable = true;
+            vitplus.interactable = true;
+            dexplus.interactable = true;
+            intplus.interactable = true;
+            chaplus.interactable = true;
+            lukplus.interactable = true;
+        }
+        if(PartyManager.attrp1 == PartyManager.attrp1Flag || PartyManager.chap1 == PartyManager.chap1Flag)
+        {
+            chamin.interactable = false;
+        }
+        }
+
+        if(GameManager.classnum == 3)
+        {
+        if(PartyManager.attrp2 >= 0 && attrConfirm == 1)
+        {
+            PartyManager.chap2 -= 1;
+            PartyManager.attrp2 += 1;
+            strplus.interactable = true;
+            vitplus.interactable = true;
+            dexplus.interactable = true;
+            intplus.interactable = true;
+            chaplus.interactable = true;
+            lukplus.interactable = true;
+        }
+        if(PartyManager.attrp2 == PartyManager.attrp2Flag || PartyManager.chap2 == PartyManager.chap2Flag)
+        {
+            chamin.interactable = false;
+        }
+        }
     }
     public void LuckPlus()
     {
+        if(GameManager.classnum == 1)
+        {
         if(luk != 20)
         {
         luk += 1;
@@ -1071,9 +1245,52 @@ public class ClassManager : MonoBehaviour
         lukplus.interactable = false;
         }
         lukmin.interactable = true;
+        }
+
+        if(GameManager.classnum == 2)
+        {
+        if(PartyManager.lukp1 != 20)
+        {
+        PartyManager.lukp1 += 1;
+        PartyManager.attrp1 -= 1;
+        }
+        attrConfirm = 1;
+        if(PartyManager.attrp1 == 0)
+        {
+        strplus.interactable = false;
+        vitplus.interactable = false;
+        dexplus.interactable = false;
+        intplus.interactable = false;
+        chaplus.interactable = false;
+        lukplus.interactable = false;
+        }
+        lukmin.interactable = true;
+        }
+
+        if(GameManager.classnum == 3)
+        {
+        if(PartyManager.lukp2 != 20)
+        {
+        PartyManager.lukp2 += 1;
+        PartyManager.attrp2 -= 1;
+        }
+        attrConfirm = 1;
+        if(PartyManager.attrp2 == 0)
+        {
+        strplus.interactable = false;
+        vitplus.interactable = false;
+        dexplus.interactable = false;
+        intplus.interactable = false;
+        chaplus.interactable = false;
+        lukplus.interactable = false;
+        }
+        lukmin.interactable = true;
+        }
     }
     public void LuckMin()
     {
+        if(GameManager.classnum == 1)
+        {
         if(attr >= 0 && attrConfirm == 1)
         {
             luk -= 1;
@@ -1088,6 +1305,45 @@ public class ClassManager : MonoBehaviour
         if(attr == attrFlag || luk == lukFlag)
         {
             lukmin.interactable = false;
+        }
+        }
+
+        if(GameManager.classnum == 2)
+        {
+        if(PartyManager.attrp1 >= 0 && attrConfirm == 1)
+        {
+            PartyManager.lukp1 -= 1;
+            PartyManager.attrp1 += 1;
+            strplus.interactable = true;
+            vitplus.interactable = true;
+            dexplus.interactable = true;
+            intplus.interactable = true;
+            chaplus.interactable = true;
+            lukplus.interactable = true;
+        }
+        if(PartyManager.attrp1 == PartyManager.attrp1Flag || PartyManager.lukp1 == PartyManager.lukp1Flag)
+        {
+            lukmin.interactable = false;
+        }
+        }
+
+        if(GameManager.classnum == 3)
+        {
+        if(PartyManager.attrp2 >= 0 && attrConfirm == 1)
+        {
+            PartyManager.lukp2 -= 1;
+            PartyManager.attrp2 += 1;
+            strplus.interactable = true;
+            vitplus.interactable = true;
+            dexplus.interactable = true;
+            intplus.interactable = true;
+            chaplus.interactable = true;
+            lukplus.interactable = true;
+        }
+        if(PartyManager.attrp2 == PartyManager.attrp2Flag || PartyManager.lukp2 == PartyManager.lukp2Flag)
+        {
+            lukmin.interactable = false;
+        }
         }
     }
 

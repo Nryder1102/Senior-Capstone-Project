@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PartyManager : MonoBehaviour
 {
  
-//Stat Manager Variables
+//Stat Manager Variables | Variable Count: Way too many
     public static int attrp1 = 0;
     public static int attrp2 = 3;
     public static int attrp1Flag = 0;
