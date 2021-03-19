@@ -105,7 +105,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
 
         //After the comment, before "Waking up"
-        dialogueText.text = "Well, chop chop, you can't be lying here all day listening to the voices in your head, now can you? You've got work to do, and I hear something roaming around nearby, goodbye for now, little one.";
+        dialogueText.text = "Well, chop chop, you can't be lying here all day listening to make believe voices in your head, now can you? You've got work to do, and I hear something roaming around nearby, goodbye for now, little one.";
     }
 
 
