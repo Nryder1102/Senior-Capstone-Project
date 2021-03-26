@@ -89,6 +89,10 @@ public class ClassManager : MonoBehaviour
 
     //Easter Eggs
     public static bool Egg1;
+    public static bool Egg2;
+    public static bool Egg3;
+    public static bool Egg4;
+    public static bool Egg5;
  
     //The singular sound that I'm too tired to figure out how to bring over from Soundmanager
     public AudioSource levelUpSound;
@@ -404,6 +408,7 @@ public class ClassManager : MonoBehaviour
         if(level <= 9)
             {
                 levelNum.text = "Level: " + level;
+                levelNumDD.text = "";
             }
         if(level >= 10)
             {
@@ -492,6 +497,7 @@ public class ClassManager : MonoBehaviour
         if(PartyManager.levelp1 <= 9)
             {
                 levelNum.text = "Level: " + PartyManager.levelp1;
+                levelNumDD.text = "";
             }
         if(PartyManager.levelp1 >= 10)
             {
@@ -558,6 +564,7 @@ public class ClassManager : MonoBehaviour
         if(PartyManager.levelp2 <= 9)
             {
                 levelNum.text = "Level: " + PartyManager.levelp2;
+                levelNumDD.text = "";
             }
         if(PartyManager.levelp2 >= 10)
             {
@@ -1044,7 +1051,7 @@ public class ClassManager : MonoBehaviour
     }
     public void IntelligenceMin()
     {
-        if(GameManager.classnum == 1)
+        if(GameManager.selectedChar == 1)
         {
         if(attr >= 0 && attrConfirm == 1)
         {
@@ -1064,7 +1071,7 @@ public class ClassManager : MonoBehaviour
         }
         }
 
-        if(GameManager.classnum == 2)
+        if(GameManager.selectedChar == 2)
         {
         if(PartyManager.attrp1 >= 0 && attrConfirm == 1)
         {
@@ -1084,7 +1091,7 @@ public class ClassManager : MonoBehaviour
         }
         }
 
-        if(GameManager.classnum == 3)
+        if(GameManager.selectedChar == 3)
         {
         if(PartyManager.attrp2 >= 0 && attrConfirm == 1)
         {
@@ -1106,7 +1113,7 @@ public class ClassManager : MonoBehaviour
     }
     public void CharismaPlus()
     {
-        if(GameManager.classnum == 1)
+        if(GameManager.selectedChar == 1)
         {
         if(cha != 20)
         {
@@ -1126,7 +1133,7 @@ public class ClassManager : MonoBehaviour
         chamin.interactable = true;
         }
 
-        if(GameManager.classnum == 2)
+        if(GameManager.selectedChar == 2)
         {
         if(PartyManager.chap1 != 20)
         {
@@ -1146,7 +1153,7 @@ public class ClassManager : MonoBehaviour
         chamin.interactable = true;
         }
 
-        if(GameManager.classnum == 3)
+        if(GameManager.selectedChar == 3)
         {
         if(PartyManager.chap2 != 20)
         {
@@ -1168,7 +1175,7 @@ public class ClassManager : MonoBehaviour
     }
     public void CharismaMin()
     {
-        if(GameManager.classnum == 1)
+        if(GameManager.selectedChar == 1)
         {
         if(attr >= 0 && attrConfirm == 1)
         {
@@ -1187,7 +1194,7 @@ public class ClassManager : MonoBehaviour
         }
         }
 
-        if(GameManager.classnum == 2)
+        if(GameManager.selectedChar == 2)
         {
         if(PartyManager.attrp1 >= 0 && attrConfirm == 1)
         {
@@ -1206,7 +1213,7 @@ public class ClassManager : MonoBehaviour
         }
         }
 
-        if(GameManager.classnum == 3)
+        if(GameManager.selectedChar == 3)
         {
         if(PartyManager.attrp2 >= 0 && attrConfirm == 1)
         {
@@ -1227,7 +1234,7 @@ public class ClassManager : MonoBehaviour
     }
     public void LuckPlus()
     {
-        if(GameManager.classnum == 1)
+        if(GameManager.selectedChar == 1)
         {
         if(luk != 20)
         {
@@ -1247,7 +1254,7 @@ public class ClassManager : MonoBehaviour
         lukmin.interactable = true;
         }
 
-        if(GameManager.classnum == 2)
+        if(GameManager.selectedChar == 2)
         {
         if(PartyManager.lukp1 != 20)
         {
@@ -1267,7 +1274,7 @@ public class ClassManager : MonoBehaviour
         lukmin.interactable = true;
         }
 
-        if(GameManager.classnum == 3)
+        if(GameManager.selectedChar == 3)
         {
         if(PartyManager.lukp2 != 20)
         {
@@ -1289,7 +1296,7 @@ public class ClassManager : MonoBehaviour
     }
     public void LuckMin()
     {
-        if(GameManager.classnum == 1)
+        if(GameManager.selectedChar == 1)
         {
         if(attr >= 0 && attrConfirm == 1)
         {
@@ -1308,7 +1315,7 @@ public class ClassManager : MonoBehaviour
         }
         }
 
-        if(GameManager.classnum == 2)
+        if(GameManager.selectedChar == 2)
         {
         if(PartyManager.attrp1 >= 0 && attrConfirm == 1)
         {
@@ -1327,7 +1334,7 @@ public class ClassManager : MonoBehaviour
         }
         }
 
-        if(GameManager.classnum == 3)
+        if(GameManager.selectedChar == 3)
         {
         if(PartyManager.attrp2 >= 0 && attrConfirm == 1)
         {

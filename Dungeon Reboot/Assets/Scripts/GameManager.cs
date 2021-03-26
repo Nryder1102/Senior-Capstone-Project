@@ -25,13 +25,14 @@ public class GameManager : MonoBehaviour
     public GameObject invUI;
     public GameObject saveUI;
     public GameObject loadUI;
+    public static GameObject allUI;
+    public GameObject uiBG;
 
     //Wait Function variables
     public static float waitVal;
     public static int waitFlag;
 
     //Default state and opening and closing of menu
-    public int menuState = 0;
     public GameObject list;
 
     //Well, confirm quitting the game
@@ -56,12 +57,11 @@ public class GameManager : MonoBehaviour
     public static string playerGender;
     public Button playerPronounConfirm;
     public Sprite egg1;
+    public Sprite egg2;
+    public Sprite egg3;
+    public Sprite egg4;
+    public Sprite egg5;
 
-    //Inventory
-    public static int objectPage = 1;
-    public Button objectLeft;
-    public Button objectRight;
-    public static int currentTab;
 
 
 
@@ -92,9 +92,11 @@ public class GameManager : MonoBehaviour
         playerNameEntry.SetActive(false);
         playerNameConfirm.interactable = false;
         playerPronounConfirm.interactable = false;
-        objectLeft.interactable = false;
+//        objectLeft.interactable = false;
         introScene.SetActive(true);
         playerGenderSelect.SetActive(true);
+        ItemManager.weapTab = true;
+        allUI = GameObject.FindWithTag("Canvas");
     }
 
     // Update is called once per frame
@@ -116,12 +118,13 @@ public class GameManager : MonoBehaviour
         {
             bool isActive = menuUI.activeSelf;
             menuUI.SetActive(!isActive);
+            allUI.SetActive(!isActive);
             confirmQuit.SetActive(false);
             StatsBack();
             InvBack();
-            objectPage = 1;
+            //objectPage = 1;
         }
-
+/*
         if(objectPage == 3)
         {
             objectRight.interactable = false;
@@ -138,9 +141,14 @@ public class GameManager : MonoBehaviour
         {
             objectLeft.interactable = true;
         }
+*/
+        if(!string.IsNullOrWhiteSpace(playerName.text) && Input.GetKeyDown(KeyCode.Return))
+        {
+            NameConfirm();
+        }
     }
 
-    //Controls what buttons choose which class
+    //Functions to start different system trees
     public void ClassStart()
     {
         classSelectUI.SetActive(true);
@@ -360,6 +368,7 @@ public class GameManager : MonoBehaviour
     {
         invUI.SetActive(false);
         list.SetActive(true);  
+        ItemManager.weapTab = true;
     }
 
 //These deal with the player name
@@ -372,13 +381,7 @@ public class GameManager : MonoBehaviour
         playerNameConfirm.interactable = false;
         statPlayerName = playerName.text.ToString();
         playerNameEntry.SetActive(false);
-        if(statPlayerName == "James " && classnum == 6 && playerGender == "male")
-        {
-            this.charPic1.GetComponent<Image>().overrideSprite = egg1;
-            ClassManager.Egg1 = true;
-            statPlayerName = "James";
-            ClassManager.className = "Trainer";
-        }
+        EggCheck();
         waitVal = 2;
         StartCoroutine(WaitRoutine());
     }
@@ -488,46 +491,8 @@ public class GameManager : MonoBehaviour
 
 
     //Space to start making inventory management, using the items from item manager
-    public void WeaponTab()
-    {
-        ItemManager.weapTab = true;
-        ItemManager.armTab = false;
-        ItemManager.miscTab = false;
-        ItemManager.keyTab = false;
-        objectPage = 1;
-        currentTab = 1;
-    }
-    
-    public void ArmorTab()
-    {
-        ItemManager.weapTab = false;
-        ItemManager.armTab = true;
-        ItemManager.miscTab = false;
-        ItemManager.keyTab = false;
-        objectPage = 1;
-        currentTab = 2;
-    }
 
-    public void MiscTab()
-    {
-        ItemManager.weapTab = false;
-        ItemManager.armTab = false;
-        ItemManager.miscTab = true;
-        ItemManager.keyTab = false;
-        objectPage = 1;
-        currentTab = 3;
-    }
-
-    public void KeyTab()
-    {
-        ItemManager.weapTab = false;
-        ItemManager.armTab = false;
-        ItemManager.miscTab = false;
-        ItemManager.keyTab = true;
-        objectPage = 1;
-        currentTab = 4;
-    }
-
+/*
     public void InvLeftArrow()
     {
 
@@ -546,6 +511,74 @@ public class GameManager : MonoBehaviour
             objectPage += 1;
         }
     }
+*/
+  /*   public void invSlot1()
+    {
+        
+    }
+    public void invSlot2()
+    {
+        
+    }
+    public void invSlot3()
+    {
+        
+    }
+    public void invSlot4()
+    {
+        
+    }
+    public void invSlot5()
+    {
+        
+    }
+    public void invSlot6()
+    {
+        
+    }
+    public void invSlot7()
+    {
+        
+    }
+    public void invSlot8()
+    {
+        
+    }
+    public void invSlot9()
+    {
+        
+    }
+    public void invSlot10()
+    {
+        
+    } */
 
 
+
+
+
+    public void EggCheck()
+    {
+        if(statPlayerName == "James " && classnum == 6 && playerGender == "male")
+        {
+            this.charPic1.GetComponent<Image>().overrideSprite = egg1;
+            ClassManager.Egg1 = true;
+            statPlayerName = "James";
+            ClassManager.className = "Trainer";
+        }
+        if(statPlayerName == "Mcp " && classnum == 2 && (playerGender == "male" || playerGender == "nb"))
+        {
+            this.charPic1.GetComponent<Image>().overrideSprite = egg2;
+            ClassManager.Egg2 = true;
+            statPlayerName = "MSTRCTRL";
+            ClassManager.className = "System Admin";
+        }
+        if(statPlayerName == "Omegax" && classnum == 5 && playerGender == "male")
+        {
+            this.charPic1.GetComponent<Image>().overrideSprite = egg3;
+            ClassManager.Egg3 = true;
+            statPlayerName = "Omega-Xis";
+            ClassManager.className = "Wizard";
+        }
+    }
 }
