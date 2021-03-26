@@ -1,7 +1,7 @@
 
 Iskaed - Dragonkin, Floor Boss, Recruitable
 Location - 5th Floor Boss, so, I mean, he's on the 5th floor (But he's only there cause he's bored and was looking for something to do)
-Personality - Basically the spoiled problem child of the dungeon, everyone takes care of him though, they don't mind, but he doesn't really notice this, pretends he's larger than life and way more dangerous than he actually is, 100% was just showing off for attention, very confident in himself
+Personality - Basically the spoiled problem child of the dungeon, everyone takes care of him though, they don't mind, but he doesn't really notice this, pretends he's larger than life and way more dangerous than he actually is, 100% was just showing off for attention, very confident in himself, yes, this leads to many problems (and broken things)
 Level: 5
 Stats:
 -Strength
@@ -24,7 +24,7 @@ Stats:
 -Luck
 -Charisma
 -Intelligence
-Class: Mage, duh (Or Shopkeep)
+Class: Mage, duh (Or Shopkeep, basically same thing)
 Notes: 
 Standard demonic shopkeeper who will take all of your money without you realizing it, probably should be a Rogue, maybe make a special Mage/Rogue hybrid for him?
 (Will still sell to you if you kill Iskaed, as he's not actually linked to the dungeon)
@@ -40,22 +40,10 @@ Personality - Protective, Loyal, probably can talk somehow as he's a boss, does 
 Level: 
 Stats:
 Class: Beast Alpha (Not Beastmaster, big difference, as y'know, one's an animal)
-Notes:
+Notes: Doggo
 
 Appearance:
-Big dog (from hell), red/black magma looking fur, red/orange glowing eyes, no, he doesn't have 3 heads, that's a Cerberus thing, yes, he curls into a ball when he sleeps
-
------------------------------------------------------------------------------------------
-
-Ikzun - Wyvern,
-Location - 
-Personality - 
-Level:
-Stats:
-
-Class:
-
-Appearance:
+Big dog (from hell), red/black magma looking fur, red/orange glowing eyes, no, he doesn't have 3 heads, that's a Cerberus thing, yes, he curls into a ball when he sleeps, and yes, it's very cute
 
 -----------------------------------------------------------------------------------------
 
@@ -71,6 +59,18 @@ Class: Paladin
 
 Appearance:
 Big soft boi, green, tusks, standard Orc, 
+
+-----------------------------------------------------------------------------------------
+
+Ikzun - Wyvern,
+Location - 
+Personality - 
+Level:
+Stats:
+
+Class:
+
+Appearance:
 
 -----------------------------------------------------------------------------------------
 
